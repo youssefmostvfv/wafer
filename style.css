@@ -1,4 +1,4 @@
-        /* ============================================
+ /* ============================================
             CSS RESET & BASE STYLES - DARK MODE
         ============================================ */
         :root {
@@ -160,6 +160,11 @@
             margin: 0 auto;
             padding: 0 var(--space-md);
         }
+        @media (max-width: 768px) {
+    .container {
+        padding: 0 16px;
+    }
+}
         
         .container-wide {
             max-width: 1400px;
@@ -1626,20 +1631,103 @@
         
         /* Fix footer */
         @media (max-width: 768px) {
-            .footer .grid-4 {
-                grid-template-columns: 1fr !important;
-                text-align: center;
-                gap: 2rem;
-            }
+
             
             .social-links {
                 justify-content: center;
             }
             
-            .footer-links li.flex {
-                justify-content: center;
-            }
+
         }
+        /* ===============================
+   FOOTER MOBILE IMPROVEMENT
+=================================*/
+@media (max-width:768px){
+
+    .footer {
+        padding: 60px 0 30px;
+    }
+
+    /* تقسيم الأعمدة */
+    .footer .grid-4{
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem;
+        text-align: center;
+    }
+
+    /* فصل بصري بين الأقسام */
+    .footer .grid-4 > div{
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid var(--color-gray-100);
+    }
+
+    .footer .grid-4 > div:last-child{
+        border-bottom: none;
+        padding-bottom: 0;
+    }
+
+    /* لوجو الفوتر */
+    .footer-logo{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        gap:0.5rem;
+    }
+
+    .footer-logo .logo-icon{
+        width:42px;
+        height:42px;
+        font-size:1.4rem;
+    }
+
+    .footer-logo .logo-text{
+        font-size:1.5rem;
+    }
+
+    /* الروابط */
+    .footer-links li{
+        margin-bottom:0.75rem;
+    }
+
+    /* السوشيال */
+    .social-links{
+        justify-content:center;
+        margin-top:1rem;
+    }
+
+    /* contact icons */
+    .footer-links li.flex{
+        justify-content:center;
+        gap:0.75rem;
+    }
+
+    /* newsletter */
+    .newsletter-form{
+        margin-top:1rem;
+    }
+
+    .newsletter-form .flex{
+        flex-direction:column;
+        gap:0.75rem;
+    }
+
+    .newsletter-form .form-control{
+        text-align:center;
+    }
+
+    .newsletter-form .btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    /* copyright */
+    .copyright{
+        margin-top:2rem;
+        padding-top:1.5rem;
+        font-size:0.85rem;
+    }
+}
+
         
         /* Fix FAQ accordion */
         @media (max-width: 576px) {
