@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <div class="logo-icon">وَ</div>
+                    <div class="logo-text">وَفير</div>
+                </a>
+                
+                <!-- Desktop Center Links -->
+                <div class="nav-desktop-links">
+                    <a href="../index.html" class="nav-link">الرئيسية</a>
+                    <a href="#how-it-works" class="nav-link">المدونة</a>
+                    <a href="./blog/index.html" class="nav-link">المشاريع</a>
+                </div>
+                
+                <!-- Right Side: Buttons & Mobile Menu Toggle -->
+                <div class="nav-actions">
+                    <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="login.html" class="btn btn-outline btn-sm">تسجيل الدخول</a>
+                    <a href="register.html" class="btn btn-primary btn-sm">إنشاء حساب</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                
+                <!-- Mobile Menu -->
+                <div class="nav-mobile" id="navMobile">
+                    <a href="#home" class="nav-link">الرئيسية</a>
+                    <a href="#how-it-works" class="nav-link">كيف تعمل</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+        <!-- ============================================
+        SECTION 4: CURRENT PROJECTS
+    ============================================ -->
+    <section class="section-padding bg-secondary" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>المشاريع الحالية على المنصة</h2>
+                <p class="section-subtitle">اختر من بين المشاريع الواعدة وشارك في تمويلها</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Project 1 -->
+                <div class="project-card card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مصنع أثاث" class="card-img">
+                    <div class="card-body">
+                        <span class="project-category">صناعي</span>
+                        <h3 class="card-title">مصنع أثاث خشبي عالي الجودة</h3>
+                        <p>إنشاء مصنع متكامل لإنتاج الأثاث الخشبي الفاخر باستخدام أحدث التقنيات</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-value">500,000 ج</span>
+                                <span class="meta-label">المطلوب</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">350,000 ج</span>
+                                <span class="meta-label">المجموع</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">45</span>
+                                <span class="meta-label">مستثمر</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-3">
+                            <span>70% ممول</span>
+                            <span>30 يوم متبقية</span>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block mt-3">استثمر في هذا المشروع</button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="منصة تعليمية" class="card-img">
+                    <div class="card-body">
+                        <span class="project-category">تقنية</span>
+                        <h3 class="card-title">منصة تعليمية تفاعلية للطلاب</h3>
+                        <p>تطوير منصة إلكترونية توفر محتوى تعليمي تفاعلي لطلاب المدارس والجامعات</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-value">250,000 ج</span>
+                                <span class="meta-label">المطلوب</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">180,000 ج</span>
+                                <span class="meta-label">المجموع</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">28</span>
+                                <span class="meta-label">مستثمر</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 72%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-3">
+                            <span>72% ممول</span>
+                            <span>45 يوم متبقية</span>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block mt-3">استثمر في هذا المشروع</button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مزرعة عضوية" class="card-img">
+                    <div class="card-body">
+                        <span class="project-category">زراعي</span>
+                        <h3 class="card-title">مزرعة منتجات عضوية طبيعية</h3>
+                        <p>إنشاء مزرعة متكاملة لإنتاج الخضروات والفواكه العضوية باستخدام الزراعة الحديثة</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-value">300,000 ج</span>
+                                <span class="meta-label">المطلوب</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">210,000 ج</span>
+                                <span class="meta-label">المجموع</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">35</span>
+                                <span class="meta-label">مستثمر</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-3">
+                            <span>70% ممول</span>
+                            <span>25 يوم متبقية</span>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block mt-3">استثمر في هذا المشروع</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="projects.html" class="btn btn-outline btn-lg">
+                    <i class="fas fa-list"></i>
+                    عرض جميع المشاريع
+                </a>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
