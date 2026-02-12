@@ -643,12 +643,12 @@
 
         /* Mobile menu */
         .nav-mobile {
-            display: none;
+            display: none;              /* ← تغيير من flex إلى none */
             position: fixed;
-            top: 56px; /* match header height */
-            right: -100%;
-            width: 280px;
-            height: calc(100vh - 56px);
+            top: 70px;                  /* ← تغيير من 56px إلى 70px */
+            right: -100%;               /* ← إزالة التكرار */
+            width: 100% ;
+            height: auto; /* ← تغيير من 56px إلى 70px */
             background: var(--color-bg-secondary);
             flex-direction: column;
             padding: 1.5rem 1rem;
@@ -660,6 +660,7 @@
         }
 
         .nav-mobile.active {
+            display: flex;              /* ← إضافة display: flex هنا */
             right: 0;
         }
 

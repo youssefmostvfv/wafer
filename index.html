@@ -66,7 +66,7 @@
                     </button>
                     <a href="login.html" class="btn btn-outline btn-sm">تسجيل الدخول</a>
                     <a href="register.html" class="btn btn-primary btn-sm">إنشاء حساب</a>
-                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <button type="button" class="mobile-menu-btn" id="mobileMenuBtn" aria-label="القائمة">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -75,6 +75,7 @@
                 <div class="nav-mobile" id="navMobile">
                     <a href="#home" class="nav-link">الرئيسية</a>
                     <a href="#how-it-works" class="nav-link">كيف تعمل</a>
+                    <a href="./blog/index.html" class="nav-link">المشاريع</a>
                 </div>
             </nav>
         </div>
@@ -799,12 +800,17 @@
         const navMobile = document.getElementById('navMobile');
 
         if (mobileMenuBtn && navMobile) {
-            mobileMenuBtn.addEventListener('click', () => {
-                navMobile.classList.toggle('active');
-                mobileMenuBtn.innerHTML = navMobile.classList.contains('active')
-                    ? '<i class="fas fa-times"></i>'
-                    : '<i class="fas fa-bars"></i>';
-            });
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();     // ← إضافة هذا السطر
+        navMobile.classList.toggle('active');
+        
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+            icon.className = navMobile.classList.contains('active') 
+                ? 'fas fa-times' 
+                : 'fas fa-bars';
+        }
+    });
 
             // Close mobile menu when clicking on a link
             navMobile.querySelectorAll('.nav-link').forEach(link => {
