@@ -2261,3 +2261,72 @@
         min-height: -webkit-fill-available;
     }
 }
+/* =========================================
+   HERO ENHANCED DESIGN
+========================================= */
+
+.hero-enhanced {
+    padding-bottom: 6rem;
+}
+
+.hero-trust strong {
+    display: block;
+    font-size: 1.5rem;
+    color: var(--color-primary-500);
+}
+
+.hero-trust span {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+}
+
+.hero-dashboard {
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard-card {
+    background: var(--color-bg-secondary);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-2xl);
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid var(--color-gray-100);
+}
+
+.dashboard-card h4 {
+    margin-bottom: 1rem;
+    color: var(--color-text-primary);
+}
+
+.dashboard-amount {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-primary-500);
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-chart {
+    height: 80px;
+    background: linear-gradient(90deg, 
+        var(--color-primary-500) 10%, 
+        transparent 10%,
+        transparent 20%,
+        var(--color-primary-500) 20%,
+        var(--color-primary-500) 30%,
+        transparent 30%);
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-stats strong {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+}
+
+.dashboard-stats span {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+}
