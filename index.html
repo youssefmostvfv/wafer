@@ -192,6 +192,12 @@
             display: flex;
             align-items: center;
         }
+        /* اخفاء ازرار auth في الموبايل */
+        @media (max-width: 768px) {
+            .nav-actions .btn {
+                display: none;
+            }
+        }
     </style>
 </head>
 
