@@ -3,62 +3,189 @@
 
 <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="theme-color" content="#111827">    <title>وَفير للاستثمار - الوسيط الذكي لتمويل المشاريع | Wafeer Investment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#111827">    
+    <title>منصة وَفير - لتمويل المشروعات الصغيرة والمتوسطة</title>
     
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="منصة وَفير- الوسيط الذكي الذي يربط بين أصحاب المشاريع الواعدة والمستثمرين الراغبين في استثمارات مربحة وآمنة">
-    <meta name="keywords" content="تمويل المشاريع، استثمار، منصة تمويل، مشاريع ناشئة، مستثمرين">
+    <meta name="description" content="منصة إلكترونية تهدف لربط أصحاب المشروعات الصغيرة والمتوسطة بالجهات الراغبة في التمويل.">
+    <meta name="keywords" content="المشروعات الصغيرة، تمويل، منصة، ريادة أعمال، التنمية المستدامة">
     <meta name="author" content="منصة وَفير">
     
-    <!-- Open Graph -->
-    <meta property="og:title" content="وَفير- الوسيط الذكي لتمويل المشاريع">
-    <meta property="og:description" content="اربط مشروعك بالمستثمرين المناسبين">
-    <meta property="og:image" content="https://mounly.com/og-image.jpg">
-    <meta property="og:url" content="https://mounly.com">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="./style.css">
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
+    <link rel="stylesheet" href="./style.css">
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
+    <style>
+        /* =======================================
+           التنسيقات الإضافية للأقسام الجديدة 
+           ======================================= */
+        
+        /* تنسيق أزرار الـ Hero الجديدة */
+        .hero-btns .btn {
+            flex: 1;
+            text-align: center;
+            min-width: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* تنسيق الصورة في الـ Hero (البديل للداشبورد) */
+        .hero-image-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-image-wrapper img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            /* تأثير جمالي للـ hover */
+            transition: transform 0.3s ease;
+        }
+        
+        .hero-image-wrapper:hover img {
+            transform: translateY(-5px);
+        }
+
+        /* تنسيق قسم الفرص الاستثمارية */
+        .opportunity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+        .opportunity-card .card-body {
+            padding: 1.5rem;
+        }
+        .opportunity-card .badge {
+            background: var(--primary-color);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        .opportunity-card .progress-container {
+            margin-bottom: 1rem;
+        }
+        .opportunity-card .progress-bar-bg {
+            width: 100%;
+            background: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 4px;
+        }
+        .opportunity-card .progress-bar-fill {
+            background: var(--primary-color);
+            height: 100%;
+        }
+        .opportunity-card .card-footer-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 1rem;
+        }
+        .opportunity-card .return-value {
+            color: #10b981;
+        }
+
+        /* تنسيق قسم الإحصائيات الجديد */
+        .stat-box-new {
+            background: var(--card-bg, #fff);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--border-color, #eee);
+        }
+        body.dark-mode .stat-box-new {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        .stat-box-new:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        .stat-box-new i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .stat-box-new h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--text-color, #111827);
+        }
+        body.dark-mode .stat-box-new h3 {
+            color: #f8fafc;
+        }
+        .stat-box-new p {
+            color: var(--text-muted, #6b7280);
+            font-size: 1.1rem;
+        }
+
+        /* بوابات الدفع */
+        .payment-gateways-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+            font-weight: 600;
+        }
+        .payment-item img {
+            max-width: 100%;
+            height: auto;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s ease;
+        }
+        .payment-item:hover img {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+        
+        .footer-note {
+            font-size: 0.85rem;
+            opacity: 0.7;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- ============================================
-        HEADER
-    ============================================ -->
     <header class="header" id="header">
         <div class="container">
             <nav class="nav">
-                <!-- Logo -->
                 <a href="#" class="logo">
                     <div class="logo-icon">وَفير</div>
                 </a>
                 
-                <!-- Desktop Center Links -->
                 <div class="nav-desktop-links">
                     <a href="#home" class="nav-link">الرئيسية</a>
-                    <a href="#how-it-works" class="nav-link">كيف تعمل</a>
-                    <a href="./blog/index.html" class="nav-link">المشاريع</a>
+                    <a href="#how-it-works" class="nav-link">آلية العمل</a>
+                    <a href="#opportunities" class="nav-link">المشروعات</a>
+                    <a href="#investors" class="nav-link">الأهمية الاقتصادية</a>
                 </div>
                 
-                <!-- Right Side: Buttons & Mobile Menu Toggle -->
                 <div class="nav-actions">
                     <button id="themeToggle" class="btn-icon" aria-label="تبديل الوضع">
                         <i class="fas fa-moon"></i>
@@ -70,262 +197,323 @@
                     </button>
                 </div>
                 
-                <!-- Mobile Menu -->
                 <div class="nav-mobile" id="navMobile">
                     <a href="#home" class="nav-link">الرئيسية</a>
-                    <a href="#how-it-works" class="nav-link">كيف تعمل</a>
-                    <a href="./blog/index.html" class="nav-link">المشاريع</a>
+                    <a href="#how-it-works" class="nav-link">آلية العمل</a>
+                    <a href="#opportunities" class="nav-link">المشروعات</a>
+                    <a href="#investors" class="nav-link">الأهمية الاقتصادية</a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- ============================================
-        SECTION 1: HERO
-    ============================================ -->
-<section class="hero hero-enhanced" id="home">
-    <div class="container">
-        <div class="grid grid-2 align-center">
-            
-            <!-- LEFT CONTENT -->
-            <div class="hero-content">
-                <h1>
-                    منصة تمويل جماعي 
-                    <span class="text-primary">تحقق عوائد استثمارية واعدة</span>
-                </h1>
+    <section class="hero hero-enhanced" id="home">
+        <div class="container">
+            <div class="grid grid-2 align-center">
+                
+                <div class="hero-content" data-aos="fade-right">
+                    <h1>
+                        منصة إلكترونية لتمويل 
+                        <span class="text-primary">المشروعات الصغيرة والمتوسطة</span>
+                    </h1>
 
-                <p class="lead mb-4">
-                    استثمر في مشاريع مختارة بعناية، وراقب نمو استثماراتك من خلال المنصه توفر الشفافية وإدارة الحساب.
-                </p>
+                    <p class="lead mb-4">
+                        نعمل على ربط أصحاب المشروعات بالجهات أو الأفراد الراغبين في التمويل لتسهيل الحصول على الدعم وتقليل الإجراءات التقليدية المعقدة، مساهمةً في تنمية الاقتصاد وتوفير فرص العمل.
+                    </p>
 
-                <div class="flex gap-3 mb-4">
-                    <a href="./blog/index.html" class="btn btn-primary btn-lg">
-                        ابدأ الاستثمار الآن
-                    </a>
-
-                    <a href="#how-it-works" class="btn btn-outline btn-lg">
-                        كيف تعمل المنصة
-                    </a>
-                </div>
-
-                <!-- TRUST STATS -->
-                <div class="hero-trust flex gap-4">
-                    <div>
-                        <strong>+3000</strong>
-                        <span>مستثمر نشط</span>
+                    <div class="flex gap-3 mb-4 hero-btns" style="flex-wrap: wrap;">
+                        <a href="./blog/index.html" class="btn btn-primary btn-lg">
+                            <i class="fas fa-chart-line"></i> ابدأ استثمارك
+                        </a>
+                        <a href="submit-project.html" class="btn btn-outline btn-lg">
+                            <i class="fas fa-file-signature"></i> قدم مشروعك للتمويل
+                        </a>
                     </div>
-                    <div>
-                        <strong>+150</strong>
-                        <span>مشروع ممول</span>
-                    </div>
-                    <div>
-                        <strong>50M+</strong>
-                        <span>حجم استثمار</span>
-                    </div>
-                </div>
-            </div>
 
-            <!-- RIGHT DASHBOARD -->
-            <div class="hero-dashboard">
-                <div class="dashboard-card">
-                    <h4>إجمالي استثماراتك</h4>
-                    <div class="dashboard-amount">3,200,000 ريال</div>
-                    <div class="dashboard-chart"></div>
-
-                    <div class="dashboard-stats grid grid-3">
+                    <div class="hero-trust flex gap-4">
                         <div>
-                            <strong>7%</strong>
-                            <span>متوسط العائد</span>
+                            <strong>3.6M</strong>
+                            <span>منشأة بمصر</span>
                         </div>
                         <div>
-                            <strong>12</strong>
-                            <span>مشروع قائم</span>
+                            <strong>9.7M</strong>
+                            <span>مشتغل بالقطاع</span>
                         </div>
                         <div>
-                            <strong>125</strong>
-                            <span>استثمار نشط</span>
+                            <strong>80%</strong>
+                            <span>من الناتج المحلي</span>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-    </div>
-</section>
+                <div class="hero-image-wrapper" data-aos="fade-left">
+                    <img src="./img/undraw_revenue-analysis_fjh2.png" alt="تمويل المشروعات الصغيرة">
+                </div>
 
-
-    <!-- ============================================
-        SECTION 2: HOW IT WORKS
-    ============================================ -->
-<section class="section-padding bg-secondary" id="how-it-works">
-    <div class="container">
-        <div class="section-header">
-            <h2>كيف تعمل منصة وَفير للاستثمار؟</h2>
-            <p class="section-subtitle">
-                آلية تشغيل احترافية تعتمد على الفحص الدقيق، الشفافية، وربط رواد الأعمال بالمستثمرين وفق معايير استثمارية واضحة
-            </p>
-        </div>
-        
-        <div class="grid grid-4">
-            <div class="process-step" data-aos="fade-up">
-                <div class="step-number">1</div>
-                <h4>تقديم المشروع ورفع المستندات</h4>
-                <p>
-                    يقوم رائد الأعمال بإنشاء حساب وتقديم مشروعه عبر نموذج تفصيلي يشمل خطة العمل، 
-                    الدراسة المالية، التوقعات الربحية، وهيكل الملكية، مع رفع المستندات القانونية اللازمة.
-                </p>
-            </div>
-            
-            <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                <div class="step-number">2</div>
-                <h4>التقييم الائتماني والفحص الفني</h4>
-                <p>
-                    يخضع المشروع لمراجعة دقيقة تشمل تحليل الجدوى الاقتصادية، سهوله استخراج الترخيص والاجراءات الحكوميه، 
-                    دراسة السوق، والتحقق من الجوانب القانونية لضمان جودة الفرص الاستثمارية المعروضة.
-                </p>
-            </div>
-            
-            <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                <div class="step-number">3</div>
-                <h4>إتاحة الفرصة للمستثمرين</h4>
-                <p>
-                    مع الاعتماد، يتم رفع المشروع على المنصة مع تحليل  مؤشرات الأداء  
-                    نسبة العائد، مدة الاستثمار، ونسبة المشاركة، ليتمكن المستثمرون من اتخاذ قرارات مناسبه.
-                </p>
-            </div>
-            
-            <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                <div class="step-number">4</div>
-                <h4>إغلاق الجولة وإدارة الاستثمار</h4>
-                <p>
-                    مع اكتمال التمويل، يتم إغلاق الجولة الاستثمارية رسميًا، 
-                    واكتمال  الأموال وفق آلية آمنة، مع متابعة دورية للأداء وتحديثات مستمرة للمستثمرين من خلال المنصه.
-                </p>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- ============================================
-        SECTION 3: PLATFORM STATS
-    ============================================ -->
-    <section class="section-padding" id="stats">
+    <section class="section-padding bg-secondary" id="how-it-works">
         <div class="container">
             <div class="section-header">
-                <h2>منصة وَفير في أرقام</h2>
-                <p class="section-subtitle">إنجازاتنا وأرقامنا تتحدث عن نفسها</p>
+                <h2>كيف تعمل منصة وَفير؟ (نموذج DFD)</h2>
+                <p class="section-subtitle">
+                    نظام معلومات متكامل يوضح مسارات تدفق البيانات بين الكيانات الخارجية والنظام لإدارة طلبات التمويل بكفاءة.
+                </p>
             </div>
             
             <div class="grid grid-4">
-                <div class="stat-card" data-aos="fade-up">
-                    <div class="stat-number" data-count="150">0</div>
-                    <div class="stat-label">مشروع ممول بنجاح</div>
+                <div class="process-step" data-aos="fade-up">
+                    <div class="step-number">1</div>
+                    <h4>تقديم طلب التمويل</h4>
+                    <p>يقوم المستخدم بإنشاء حساب وإدخال بيانات طلب التمويل ودراسات الجدوى ليتم حفظها في قاعدة بيانات المشروعات (D2).</p>
                 </div>
                 
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="stat-number" data-count="3000">0</div>
-                    <div class="stat-label">مستثمر نشط</div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <h4>مراجعة الطلب</h4>
+                    <p>يتلقى "موظف المراجعة" الطلبات عبر النظام لدراستها فنياً واتخاذ قرار دقيق بالقبول أو الرفض وتحديث حالة المشروع.</p>
                 </div>
                 
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="stat-number" data-count="50">0</div>
-                    <div class="stat-label">مليون+ إجمالي التمويل</div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <h4>استعراض واختيار المشروع</h4>
+                    <p>يتيح النظام للمستثمر استعراض بيانات المشروعات المعتمدة المتاحة واختيار المشروع المناسب لتوجهاته الاستثمارية.</p>
                 </div>
                 
-                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="stat-number" data-count="96">0</div>
-                    <div class="stat-label">% نسبة رضا العملاء</div>
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <h4>تنفيذ عملية الدفع</h4>
+                    <p>يتم تنفيذ المعاملة المالية عبر بوابة دفع خارجية (Payment Gateway) وإصدار تأكيد الدفع للمستثمر وصاحب المشروع.</p>
                 </div>
             </div>
         </div>
     </section>
 
+    <section class="section-padding" id="opportunities">
+        <div class="container">
+            <div class="section-header">
+                <h2>مشروعات استثمارية متاحة</h2>
+                <p class="section-subtitle">دعم قطاعات الإنتاج والخدمات لتعزيز التنمية المستدامة وإحلال الواردات</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card opportunity-card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="تطبيق توصيل">
+                    <div class="card-body">
+                        <span class="badge">مشروع خدمي</span>
+                        <h4 class="card-title mb-2">تطبيق للخدمات اللوجستية</h4>
+                        <p class="text-sm text-muted mb-4">مشروع خدمي حديث يعتمد على التكنولوجيا لربط سلاسل الإمداد وتقليل التكاليف التشغيلية.</p>
+                        
+                        <div class="progress-container">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>تم جمع: 1.5M جنيه</span>
+                                <span>الهدف: 2M جنيه</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 75%;"></div>
+                            </div>
+                            <div class="text-xs text-muted mt-1 text-left">75% مكتمل</div>
+                        </div>
 
+                        <div class="card-footer-details">
+                            <div>
+                                <div class="text-xs text-muted">التصنيف</div>
+                                <strong>مشروع صغير</strong>
+                            </div>
+                            <div>
+                                <div class="text-xs text-muted">العمالة المستهدفة</div>
+                                <strong class="return-value">أقل من 50 عامل</strong>
+                            </div>
+                        </div>
+                        <a href="./blog/index.html" class="btn btn-outline btn-sm" style="width: 100%; margin-top: 15px;">عرض دراسة الجدوى</a>
+                    </div>
+                </div>
 
-    <!-- ============================================
-        SECTION 5: FOR INVESTORS
-    ============================================ -->
+                <div class="card opportunity-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مصنع">
+                    <div class="card-body">
+                        <span class="badge">مشروع إنتاجي (صناعي)</span>
+                        <h4 class="card-title mb-2">مصنع تدوير المخلفات الصلبة</h4>
+                        <p class="text-sm text-muted mb-4">يعمل المشروع على إحلال الواردات بتوفير خامات محلية بديلة، ويدعم الاستدامة البيئية بقوة.</p>
+                        
+                        <div class="progress-container">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>تم جمع: 300K جنيه</span>
+                                <span>الهدف: 1M جنيه</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 30%;"></div>
+                            </div>
+                            <div class="text-xs text-muted mt-1 text-left">30% مكتمل</div>
+                        </div>
+
+                        <div class="card-footer-details">
+                            <div>
+                                <div class="text-xs text-muted">التصنيف</div>
+                                <strong>مشروع متوسط</strong>
+                            </div>
+                            <div>
+                                <div class="text-xs text-muted">العمالة المستهدفة</div>
+                                <strong class="return-value">أكثر من 50 عامل</strong>
+                            </div>
+                        </div>
+                        <a href="./blog/index.html" class="btn btn-outline btn-sm" style="width: 100%; margin-top: 15px;">عرض دراسة الجدوى</a>
+                    </div>
+                </div>
+
+                <div class="card opportunity-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="مطعم">
+                    <div class="card-body">
+                        <span class="badge">مشروع تجاري</span>
+                        <h4 class="card-title mb-2">منافذ توزيع منتجات زراعية</h4>
+                        <p class="text-sm text-muted mb-4">يستهدف الانتشار الجغرافي في المناطق الريفية وتقليل الاعتماد على المركزية لتوفير السلع.</p>
+                        
+                        <div class="progress-container">
+                            <div class="flex justify-between text-sm mb-1">
+                                <span>تم جمع: 450K جنيه</span>
+                                <span>الهدف: 500K جنيه</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 90%;"></div>
+                            </div>
+                            <div class="text-xs text-muted mt-1 text-left">90% مكتمل</div>
+                        </div>
+
+                        <div class="card-footer-details">
+                            <div>
+                                <div class="text-xs text-muted">التصنيف</div>
+                                <strong>متناهي الصغر</strong>
+                            </div>
+                            <div>
+                                <div class="text-xs text-muted">العمالة المستهدفة</div>
+                                <strong class="return-value">أقل من 10 عمال</strong>
+                            </div>
+                        </div>
+                        <a href="./blog/index.html" class="btn btn-outline btn-sm" style="width: 100%; margin-top: 15px;">عرض دراسة الجدوى</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-6">
+                <a href="./blog/index.html" class="btn btn-primary btn-lg">تصفح قاعدة بيانات المشروعات</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding bg-secondary" id="stats">
+        <div class="container">
+            <div class="section-header">
+                <h2>المشروعات الصغيرة في أرقام</h2>
+                <p class="section-subtitle">من الهامش إلى مركز القرار الاقتصادي العالمي والمحلي</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="stat-box-new" data-aos="fade-up">
+                    <i class="fas fa-globe"></i>
+                    <h3><span class="stat-number" data-count="95">0</span>%</h3>
+                    <p>من الكيانات الإنتاجية عالمياً</p>
+                </div>
+                
+                <div class="stat-box-new" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-briefcase"></i>
+                    <h3><span class="stat-number" data-count="75">0</span>%</h3>
+                    <p>من القوى العاملة بالقطاع الخاص</p>
+                </div>
+                
+                <div class="stat-box-new" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-chart-line"></i>
+                    <h3><span class="stat-number" data-count="40">0</span>%</h3>
+                    <p>مساهمة في الناتج المحلي</p>
+                </div>
+                
+                <div class="stat-box-new" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-users-cog"></i>
+                    <h3><span class="stat-number" data-count="70">0</span>%</h3>
+                    <p>من الوظائف الموفرة عالمياً</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="section-padding" id="investors">
         <div class="container">
             <div class="section-header">
-                <h2>للمستثمرين</h2>
-                <p class="section-subtitle">استثمر أموالك في مشاريع واعدة وحقيقية بأرباح مشروعة</p>
+                <h2>الأبعاد الاستراتيجية والأهمية الاقتصادية</h2>
+                <p class="section-subtitle">لماذا تعد المشروعات الصغيرة الحصن المنيع لاقتصاد الدولة؟</p>
             </div>
             
             <div class="grid grid-3">
                 <div class="card" data-aos="fade-up">
                     <div class="card-body text-center">
                         <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
+                            <i class="fas fa-users-slash"></i>
                         </div>
-                        <h4 class="card-title">عوائد مجزية</h4>
-                        <p>استثمر في مشاريع حقيقية بعوائد تصل إلى 30% سنوياً حسب نوع المشروع ودرجة خطورته</p>
+                        <h4 class="card-title">تفتيت مشكلة البطالة</h4>
+                        <p>تتمتع هذه المشروعات بقدرة هائلة على استيعاب العمالة نصف الماهرة وتدريبها أثناء العمل، مما يحول قوى بشرية معطلة إلى طاقة منتجة.</p>
                     </div>
                 </div>
                 
                 <div class="card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-body text-center">
                         <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
+                            <i class="fas fa-box-open"></i>
                         </div>
-                        <h4 class="card-title">حماية وأمان</h4>
-                        <p>نظام متكامل لحماية استثماراتك مع ضمانات ورقابة مستمرة على سير المشاريع</p>
+                        <h4 class="card-title">إحلال الواردات</h4>
+                        <p>تساهم في تصنيع بدائل محلية للسلع المستوردة، مما يخفف الضغط المتزايد على العملة الصعبة ويحسن الميزان التجاري للدولة.</p>
                     </div>
                 </div>
                 
                 <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-body text-center">
                         <div class="feature-icon">
-                            <i class="fas fa-chart-pie"></i>
+                            <i class="fas fa-map-marked-alt"></i>
                         </div>
-                        <h4 class="card-title">سهوله اجراءات الاستثمار</h4>
-                        <p>قسم استثماراتك على عدة مشاريع مختلفة لتقليل المخاطر وزيادة فرص النجاح</p>
+                        <h4 class="card-title">التوزيع العادل للتنمية</h4>
+                        <p>انتشار هذه المشروعات في الأقاليم والقرى يضمن وصول التنمية للمناطق الأكثر احتياجاً، وليس فقط في العواصم والمدن الكبرى.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-        SECTION 6: FOR ENTREPRENEURS
-    ============================================ -->
     <section class="section-padding bg-secondary" id="entrepreneurs">
         <div class="container">
             <div class="section-header">
-                <h2>لأصحاب المشاريع</h2>
-                <p class="section-subtitle">احصل ع تمويل مشروعك من خلال انظمه متعدده وسهله</p>
+                <h2>خصائص المشروعات المعتمدة</h2>
+                <p class="section-subtitle">ما الذي يميز المشاريع الصغيرة ويجعلها ركيزة التنمية؟</p>
             </div>
             
             <div class="grid grid-2">
                 <div data-aos="fade-right">
-                    <h3 class="mb-3">لماذا تقدم مشروعك على وَفير؟</h3>
-                    <p class="mb-4">منصة وَفير توفر لك بيئة آمنة وشفافة للحصول على التمويل لمشروعك من مستثمرين حقيقيين مهتمين بنجاحك.</p>
+                    <h3 class="mb-3">التكنولوجيا والمرونة التشغيلية</h3>
+                    <p class="mb-4">تعتمد المشروعات التي ندعمها على أساليب تشغيل مرنة تجعلها قادرة على التكيف السريع مع التغيرات في السوق وظروف الاقتصاد المتقلبة.</p>
                     
                     <div class="space-y-3 mb-5">
                         <div class="flex items-center gap-3">
                             <div class="check-icon">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <p>تمويل سربع ب اجراءات اسهل 
-                            بلاش نوجه انتقاد لاي بنك ع منخشش مقارنه بينهم</p>
+                            <p>تكنولوجيا مبسطة تقلل الحاجة למعدات باهظة التكاليف وتسهل نقل الفروع.</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="check-icon">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <p>توفير دعم وطرق سهله وسريعه للانتشار ف السوق المحلي</p>
+                            <p>الاعتماد على الموارد والخامات المحلية لدعم المجتمع وزيادة التنافسية.</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="check-icon">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <p>توفير شبكه من الاستشاريين ف المجالات المختلفه للاستثمار</p>
+                            <p>هيكل تنظيمي بسيط يتيح لرواد الأعمال اتخاذ قرارات إدارية سريعة وكفاءة.</p>
                         </div>
                         <div class="flex items-center gap-3">
                             <div class="check-icon">
                                 <i class="fas fa-check"></i>
                             </div>
-                            <p>امان سريه البيانات التجاريه والاستثماريه</p>
+                            <p>القدرة على تعديل المنتجات استجابة لاحتياجات العملاء المباشرة.</p>
                         </div>
                     </div>
                     
@@ -336,32 +524,29 @@
                 </div>
                 
                 <div data-aos="fade-left">
-                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="أصحاب المشاريع" class="rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="أصحاب المشاريع" class="rounded-lg shadow-xl" style="width: 100%; height: auto;">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ============================================
-        SECTION 7: SUCCESS STORIES
-    ============================================ -->
     <section class="section-padding" id="success-stories">
         <div class="container">
             <div class="section-header">
-                <h2>قصص النجاح</h2>
-                <p class="section-subtitle">مشاريع نجحت بتمويل من وَفير وحققت أرباحاً للمستثمرين</p>
+                <h2>أثر المنصات الرقمية (نماذج وتأثير)</h2>
+                <p class="section-subtitle">كيف تساهم المنصات في سد فجوة الموارد والخبرات الفنية</p>
             </div>
             
             <div class="grid grid-3">
                 <div class="testimonial-card card" data-aos="fade-up">
                     <div class="card-body">
-                        <p class="mb-4">"بفضل تمويل منصة وَفير، تمكنت من تطوير تطبيق توصيل طلبات المطاعم الذي أصبح من أشهر التطبيقات في منطقتنا. المستثمرون حصلوا على عوائد ممتازة تجاوزت 25% سنوياً."</p>
+                        <p class="mb-4">"المنصات الرقمية توفر أدوات تخطيط ومتابعة تساعدنا كرواد أعمال على تنظيم المهام وتتبع تقدم التنفيذ في الوقت الفعلي، مما قلل من الفوضى التشغيلية وزاد من إنتاجية مشروعنا المتناهي الصغر بشكل ملحوظ."</p>
                         
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">م</div>
                             <div>
-                                <h5 class="mb-1">مصطفى أحمد</h5>
-                                <p class="text-sm text-muted">مؤسس تطبيق "توصيلتي"</p>
+                                <h5 class="mb-1">صاحب مشروع تجاري</h5>
+                                <p class="text-sm text-muted">مستفيد من تنظيم الموارد</p>
                             </div>
                         </div>
                     </div>
@@ -369,13 +554,13 @@
                 
                 <div class="testimonial-card card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-body">
-                        <p class="mb-4">"كنت أحلم بافتتاح مصنع صغير للأثاث المعدني، ووَفير ساعدتني في جمع التمويل من 20 مستثمراً خلال 45 يوم فقط. اليوم المصنع يعمل بكامل طاقته ويصدر لمناطق متعددة."</p>
+                        <p class="mb-4">"بدلاً من متابعة المهام المالية يدوياً أو عبر ملفات الإكسل، المنصة وفرت لنا رؤية واحدة واضحة لتمويل المشروع وسجل السداد، مما وفر وقتنا في التخطيط وساعد في خفض التكلفة الإدارية."</p>
                         
                         <div class="testimonial-author">
-                            <div class="testimonial-avatar">س</div>
+                            <div class="testimonial-avatar">أ</div>
                             <div>
-                                <h5 class="mb-1">سامي محمد</h5>
-                                <p class="text-sm text-muted">صاحب مصنع "حديدون"</p>
+                                <h5 class="mb-1">مدير مالي لمشروع ناشئ</h5>
+                                <p class="text-sm text-muted">تخفيض التكاليف والوقت</p>
                             </div>
                         </div>
                     </div>
@@ -383,13 +568,13 @@
                 
                 <div class="testimonial-card card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-body">
-                        <p class="mb-4">"كأحد المستثمرين في منصة وَفير، استطعت تنويع محفظتي الاستثمارية على 8 مشاريع مختلفة. العوائد كانت ممتازة والمنصة وفرت لي كل المعلومات اللازمة لمتابعة استثماراتي."</p>
+                        <p class="mb-4">"تقارير المنصة وقواعد البيانات الموثقة ساعدتني كممول على اتخاذ قرارات استثمارية مبنية على بيانات مالية حقيقية ودراسات جدوى دقيقة، بدلاً من الاعتماد على القرارات العشوائية لتقييم المشاريع."</p>
                         
                         <div class="testimonial-author">
                             <div class="testimonial-avatar">خ</div>
                             <div>
-                                <h5 class="mb-1">خالد عمر</h5>
-                                <p class="text-sm text-muted">مستثمر في 8 مشاريع</p>
+                                <h5 class="mb-1">ممول مسجل بالمنصة</h5>
+                                <p class="text-sm text-muted">دعم اتخاذ القرار</p>
                             </div>
                         </div>
                     </div>
@@ -397,308 +582,276 @@
             </div>
         </div>
     </section>
-    <!-- ============================================
-            SECTION 14: SOCIAL IMPACT
-    ============================================ -->
-    <section class="section-padding">
+
+    <section class="section-padding bg-secondary">
         <div class="container">
             <div class="section-header">
-                <h2>تأثيرنا: أكثر من أرقام</h2>
-                <p class="section-subtitle">كيف تساهم وَفير في تنمية المجتمعات والاقتصادات</p>
+                <h2>التنمية المستدامة (أبعاد التأثير)</h2>
+                <p class="section-subtitle">علاقة تكاملية: المشروعات الصغيرة تدعم أهداف التنمية الاقتصادية والبيئية</p>
             </div>
             
             <div class="grid grid-2 align-center gap-6">
                 <div data-aos="fade-right">
-                    <img src="./img/business-team-work.webp" style="border-radius: 30px;" alt="التأثير المجتمعي" class="rounded-lg shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" style="border-radius: 30px; width: 100%;" alt="التأثير المجتمعي" class="shadow-xl">
                 </div>
                 
                 <div data-aos="fade-left">
-                    <h3 class="mb-4">تمويل المشاريع = خلق فرص عمل</h3>
-                    <p class="mb-4">تساهم المشاريع الممولة عبر وَفير في خلق فرص عمل مباشرة وغير مباشرة. وفقاً لإحصائياتنا، كل 100,000 جنيه تمول عبر المنصة تساهم في خلق 3 فرص عمل جديدة في المتوسط.</p>
+                    <h3 class="mb-4">أبعاد تأثير المشروعات</h3>
+                    <p class="mb-4">تسهم المشروعات المعتمدة لدينا في تحقيق نمو متوازن ومستمر، كل زيادة في عدد المشروعات تؤدي تلقائياً إلى تحسين مستوى معيشة الفئات المستفيدة.</p>
                     
                     <div class="impact-stats mb-5">
                         <div class="grid grid-3">
                             <div class="text-center">
-                                <div class="impact-number">2,300+</div>
-                                <div class="impact-label">فرصة عمل<br>مباشرة</div>
+                                <div class="impact-number">اقتصادي</div>
+                                <div class="impact-label" style="font-size:12px; margin-top:5px">زيادة الإنتاج القومي ودعم الموارد البشرية والابتكار</div>
                             </div>
                             <div class="text-center">
-                                <div class="impact-number">15,000+</div>
-                                <div class="impact-label">مستفيد غير<br>مباشر</div>
+                                <div class="impact-number">اجتماعي</div>
+                                <div class="impact-label" style="font-size:12px; margin-top:5px">تحسين المعيشة وإشراك فئات كالشباب والنساء بالقرى</div>
                             </div>
                             <div class="text-center">
-                                <div class="impact-number">42%</div>
-                                <div class="impact-label">من المشاريع<br>في المحافظات</div>
+                                <div class="impact-number">بيئي</div>
+                                <div class="impact-label" style="font-size:12px; margin-top:5px">التحول لمشروعات خضراء باستهلاك أقل للموارد وتقليل التلوث</div>
                             </div>
                         </div>
                     </div>
                     
-                    <h4 class="mb-3">تمكين الفئات الأقل حظاً</h4>
-                    <p>نولي اهتماماً خاصاً للمشاريع التي يقودها شباب ونساء في المناطق الأقل حظاً، حيث نقدم لهم دعماً استشارياً إضافياً ونسبة عمولة مخفضة لتشجيعهم على تحقيق أحلامهم الريادية.</p>
+                    <h4 class="mb-3">دعم الاندماج الاقتصادي</h4>
+                    <p>نعمل كأداة فعالة لتحقيق أهداف التنمية المستدامة (SDG)، وتحديداً تعزيز العمل اللائق وتقليل الفقر من خلال نشر ثقافة المبادرة وريادة الأعمال بعيداً عن الوظائف الحكومية التقليدية.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ============================================
-        SECTION 8: ABOUT US
-    ============================================ -->
-    <div data-aos="fade-right " style="padding: 2rem;">
-        <h3 class="mb-3">رحلة وَفير: أكثر من مجرد منصة تمويل</h3>
-        <p class="mb-4">نشأت فكرة وَفير من واقع التحديات التي تواجه رواد الأعمال في العالم العربي في الوصول إلى التمويل التقليدي. بين عامي 2018 و2020، لاحظ مؤسسو المنصة فجوة كبيرة بين المشاريع الواعدة التي تموت في مهدها بسبب نقص التمويل، وبين المستثمرين الراغبين في استثمارات ذات عوائد مجزية لكنهم يفتقدون الآلية الآمنة للوصول إليها.</p>
-        
-        <p class="mb-4">ومن هنا، ولدت وَفير كحل تكنولوجي يربط بين الطرفين في بيئة آمنة وشفافة. لم نكن نهدف فقط إلى جمع الأموال، بل إلى بناء مجتمع استثماري وريادي يعمل على تعزيز الاقتصاد المحلي والإقليمي.</p>
-        
-        <h4 class="mb-3">فلسفتنا: الشفافية أولاً</h4>
-        <p class="mb-4">نؤمن في وَفير أن الثقة هي أساس أي عملية تمويل ناجحة. لذلك، نلتزم بمبدأ الشفافية الكاملة في كل خطوة - من تقييم المشاريع إلى متابعة الأداء. كل مستثمر لديه الحق في معرفة كل التفاصيل عن مشروع يستثمر فيه، وكل صاحب مشروع يعرف تماماً حقوقه والتزاماته.</p>
-        
-        <h4 class="mb-3">قيمنا الأساسية</h4>
-        <div class="space-y-3 mb-5">
-            <div class="flex items-center gap-3">
-                <div class="check-icon">
-                    <i class="fas fa-star"></i>
+
+    <section class="section-padding">
+        <div class="container">
+            <div data-aos="fade-up" style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <h2 class="mb-4">عن النظام: تحليل وتصميم منصة وَفير</h2>
+                <p class="mb-4 text-muted">النظام (System) هو مجموعة من المكونات المترابطة التي تعمل معاً كبيئة تقنية تربط بين الممولين ورواد الأعمال. يتم تحويل البيانات المدخلة مثل دراسات الجدوى واحتياجات المشروعات إلى نتائج ومعلومات مفيدة من خلال العمليات الداخلية لبرمجياتنا.</p>
+                
+                <p class="mb-5 text-muted">تم الاعتماد على هندسة نظم المعلومات (Information System) لتوفير تخزين منظم، واسترجاع سريع للبيانات (DBMS)، ودعم العمليات التشغيلية واتخاذ القرارات الاستراتيجية التي تفيد كافة أطراف العملية التمويلية.</p>
+                
+                <h3 class="mb-4 text-primary">خصائص نظامنا البرمجي</h3>
+                <div class="grid grid-3 text-center">
+                    <div>
+                        <i class="fas fa-link" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;"></i>
+                        <h4 class="mb-2">التكامل</h4>
+                        <p class="text-sm">جميع مكونات النظام وقواعد البيانات تعمل بشكل مترابط لخدمة الممولين.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-sync-alt" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;"></i>
+                        <h4 class="mb-2">المرونة</h4>
+                        <p class="text-sm">قدرة النظام على التكيف مع التغيرات والتطوير المستمر للخدمات.</p>
+                    </div>
+                    <div>
+                        <i class="fas fa-bullseye" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;"></i>
+                        <h4 class="mb-2">الدقة والكفاءة</h4>
+                        <p class="text-sm">تحقيق النتائج المالية والتقييمية المطلوبة بأقل مجهود ووقت.</p>
+                    </div>
                 </div>
-                <p><strong>النزاهة:</strong> نعمل بصدق ووضوح في كل تعاملاتنا</p>
-            </div>
-            <div class="flex items-center gap-3">
-                <div class="check-icon">
-                    <i class="fas fa-hands-helping"></i>
-                </div>
-                <p><strong>الشراكة:</strong> نحن شركاء في نجاح المشاريع، وليس مجرد وسيط</p>
-            </div>
-            <div class="flex items-center gap-3">
-                <div class="check-icon">
-                    <i class="fas fa-lightbulb"></i>
-                </div>
-                <p><strong>الابتكار:</strong> نطور باستمرار حلولاً تمويلية مبتكرة</p>
             </div>
         </div>
-    </div>
-    <!-- ============================================
-    SECTION 11: PARTNERS
-    ============================================ -->
+    </section>
+
     <section class="section-padding bg-secondary">
         <div class="container">
             <div class="section-header">
-                <h2>شركاؤنا</h2>
-                <p class="section-subtitle">نعمل مع أبرز المؤسسات المالية والاستشارية</p>
+                <h2>البنية التحتية والبيانات</h2>
+                <p class="section-subtitle">آلية آمنة لمعالجة وتخزين البيانات وفق مراحل التحليل المعتمدة</p>
             </div>
             
-            <div class="partners-grid">
+            <div class="partners-grid" data-aos="fade-up">
                 <div class="partner-logo">
                     <div class="text-center">
-                        <i class="fas fa-university  text-primary icon-web "></i>
-                        <p class="mt-2 font-bold">البنك الأهلي</p>
+                        <i class="fas fa-database text-primary" style="font-size: 2.5rem;"></i>
+                        <p class="mt-2 font-bold">قواعد بيانات (MySQL)</p>
                     </div>
                 </div>
                 
                 <div class="partner-logo">
                     <div class="text-center">
-                        <i class="fas fa-balance-scale  text-primary icon-web"></i>
-                        <p class="mt-2 font-bold">شركة المحاماة المتحدة</p>
+                        <i class="fas fa-server text-primary" style="font-size: 2.5rem;"></i>
+                        <p class="mt-2 font-bold">معالجة خلفية (PHP)</p>
                     </div>
                 </div>
                 
                 <div class="partner-logo">
                     <div class="text-center">
-                        <i class="fas fa-chart-bar  text-primary icon-web"></i>
-                        <p class="mt-2 font-bold">شركة المراجعة المالية</p>
+                        <i class="fab fa-js text-primary" style="font-size: 2.5rem;"></i>
+                        <p class="mt-2 font-bold">تفاعلية وتخطيط (JS/HTML)</p>
                     </div>
                 </div>
                 
                 <div class="partner-logo">
                     <div class="text-center">
-                        <i class="fas fa-handshake  text-primary icon-web"></i>
-                        <p class="mt-2 font-bold">جمعية ريادة الأعمال</p>
+                        <i class="fas fa-lock text-primary" style="font-size: 2.5rem;"></i>
+                        <p class="mt-2 font-bold">تشفير وحماية البيانات</p>
                     </div>
+                </div>
+            </div>
+
+            <h3 class="payment-gateways-title" data-aos="fade-up">طرق الدفع والتكامل الإلكتروني (Payment Gateways)</h3>
+            <div class="partners-grid" style="grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));" data-aos="fade-up" data-aos-delay="100">
+                <div class="payment-item text-center">
+                    <img src="./img/mastercard.webp" alt="Mastercard">
+                </div>
+                <div class="payment-item text-center">
+                    <img src="./img/visa.webp" alt="Visa">
+                </div>
+                <div class="payment-item text-center">
+                    <img src="./img/fawry.webp" alt="Fawry">
+                </div>
+                <div class="payment-item text-center" style="display:flex; align-items:center; justify-content:center;">
+                    <img src="./img/instapay.webp" alt="instapay">
+                </div>
+                <div class="payment-item text-center" style="display:flex; align-items:center; justify-content:center;">
+                    <img src="./img/vodafone.webp" alt="vodafone">
                 </div>
             </div>
         </div>
     </section>
-        <!-- ============================================
-        SECTION 10: CTA
-    ============================================ -->
-    <!-- <section class="cta" id="cta">
-        <div class="container">
-            <div class="text-center" data-aos="zoom-in">
-                <h2 class="mb-4">جاهز لبدء رحلتك الاستثمارية أو التمويلية؟</h2>
-                <p class="lead mb-5">انضم إلى آلاف المستثمرين وأصحاب المشاريع الذين نجحوا مع منصة وَفير</p>
-                
-                <div class="flex gap-3 justify-center">
-                    <a href="register.html?type=investor" class="btn btn-outline btn-lg">
-                        <i class="fas fa-user-tie"></i>
-                        تصفح المشاريع
-                    </a>
-                    <a href="register.html?type=entrepreneur" class="btn btn-outline btn-lg">
-                        <i class="fas fa-lightbulb"></i>
-                        سجل كصاحب مشروع
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section> -->
 
-    <!-- ============================================
-        SECTION 13: GLOSSARY & CONCEPTS
-    ============================================ -->
-    <section class="section-padding bg-secondary">
+    <section class="section-padding">
         <div class="container">
             <div class="section-header">
-                <h2>مفاهيم يجب أن تعرفها</h2>
-                <p class="section-subtitle">قاموس مبسط لأهم المصطلحات في عالم التمويل والاستثمار</p>
+                <h2>معايير وتصنيفات المشروعات</h2>
+                <p class="section-subtitle">كيف نصنف المشروعات وفقاً للمعايير الأكاديمية والتمويلية؟</p>
             </div>
             
             <div class="grid grid-2">
                 <div data-aos="fade-right">
                     <div class="concept-card">
-                        <h4 class="text-primary">التمويل الجماعي (Crowdfunding)</h4>
-                        <p>نموذج تمويلي يعتمد على جمع الأموال من عدد كبير من الأفراد، عادة عبر الإنترنت، لتمويل مشروع أو مبادرة معينة.</p>
+                        <h4 class="text-primary">التصنيف حسب عدد العاملين</h4>
+                        <p>الأكثر استخداماً؛ يشمل المشروعات متناهية الصغر (أقل من 10 عمال)، والصغيرة (من 10 لـ 50)، والمتوسطة (من 50 لـ 200 عامل).</p>
                     </div>
                     
                     <div class="concept-card">
-                        <h4 class="text-primary">حقوق المساهمين (Equity)</h4>
-                        <p>نسبة الملكية التي يحصل عليها المستثمر مقابل تمويله للمشروع، مما يمنحه حقاً في الأرباح والقرارات.</p>
+                        <h4 class="text-primary">التصنيف حسب رأس المال</h4>
+                        <p>يُستخدم غالباً في السياسات التمويلية، وينقسم لمشروعات ذات رأس مال محدود، وأخرى برأس مال متوسط تعتمد على قروض صغيرة أو تمويل شخصي.</p>
                     </div>
                     
                     <div class="concept-card">
-                        <h4 class="text-primary">دراسة الجدوى (Feasibility Study)</h4>
-                        <p>تحليل مفصل لتقييم مدى قابلية المشروع للتنفيذ والنجاح من النواحي الفنية والمالية والتشغيلية.</p>
+                        <h4 class="text-primary">التصنيف حسب النشاط</h4>
+                        <p>تقسم المشروعات إلى مشاريع إنتاجية (صناعية/زراعية)، مشاريع خدمية (سياحية/صحية)، ومشاريع تجارية مختصة بالبيع والتوزيع.</p>
                     </div>
                 </div>
                 
                 <div data-aos="fade-left">
                     <div class="concept-card">
-                        <h4 class="text-primary">نموذج العمل (Business Model)</h4>
-                        <p>الإطار الذي يحدد كيف سينشئ المشروع قيمة ويقدمها للعملاء ويكسب منها الأرباح.</p>
+                        <h4 class="text-primary">معيار مستوى التكنولوجيا</h4>
+                        <p>مشاريع تقليدية، وأخرى حديثة قائمة كلياً على الابتكار والتطوير التقني وتلبي متطلبات الاقتصاد المعرفي الحديث.</p>
                     </div>
                     
                     <div class="concept-card">
-                        <h4 class="text-primary">العائد على الاستثمار (ROI)</h4>
-                        <p>مقياس أداء يستخدم لتقييم كفاءة الاستثمار أو مقارنة كفاءة عدد من الاستثمارات المختلفة.</p>
+                        <h4 class="text-primary">معيار المبيعات والإيرادات</h4>
+                        <p>مؤشر على القوة الاقتصادية والقدرة التنافسية للمشروع داخل السوق الإقليمي، حيث يشترط ألا تتجاوز إيرادات المشروع الصغير حداً معيناً (50 مليون جنيه).</p>
                     </div>
                     
                     <div class="concept-card">
-                        <h4 class="text-primary">حصص التمويل (Funding Rounds)</h4>
-                        <p>مراحل متتالية لجمع التمويل للمشروع، تبدأ عادةً بالبذور ثم السلسلة A، B، C وهكذا.</p>
+                        <h4 class="text-primary">أهمية تعدد المفاهيم</h4>
+                        <p>يساعد تصنيف المشاريع بدقة في المنصة على تحديد التحديات ووضع سياسات اقتصادية وتمويلية مناسبة لكل نوع من المشروعات.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ============================================
-            SECTION 12: BLOG & ARTICLES
-    ============================================ -->
-    <section class="section-padding">
+
+    <section class="section-padding bg-secondary">
         <div class="container">
             <div class="section-header">
-                <h2>معرفة وخبرات</h2>
-                <p class="section-subtitle">مقالات ونصائح لتطوير مشروعك وزيادة وعيك الاستثماري</p>
+                <h2>التحديات والحلول الاستراتيجية</h2>
+                <p class="section-subtitle">كيف تساهم دراسات المنصة في تذليل العقبات الاقتصادية</p>
             </div>
             
             <div class="grid grid-3">
-                <!-- المقال 1 -->
                 <div class="card" data-aos="fade-up">
                     <div class="card-body">
-                        <div class="blog-category">ريادة الأعمال</div>
-                        <h4 class="card-title mb-3">كيف تعد خطة عمل مقنعة لجذب المستثمرين؟</h4>
-                        <p class="text-muted mb-3">دليل عملي يتضمن العناصر الأساسية لخطة عمل ناجحة تلهم الثقة وتجذب التمويل.</p>
+                        <div class="blog-category">تحديات مالية</div>
+                        <h4 class="card-title mb-3">نقص التمويل والاعتماد الذاتي</h4>
+                        <p class="text-muted mb-3">يعيق النمو حيث تعتمد نسبة كبيرة من المشروعات (حوالي 80%) على التمويل الذاتي، وهنا يبرز دور المنصة في توفير بدائل تمويلية.</p>
                         <div class="flex justify-between items-center mt-4">
-                            <span class="text-sm text-primary">اقرأ المزيد</span>
-                            <span class="text-xs text-muted">10 دقيقة قراءة</span>
+                            <span class="text-sm text-primary">المبحث الثاني</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- المقال 2 -->
                 <div class="card" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-body">
-                        <div class="blog-category">الاستثمار</div>
-                        <h4 class="card-title mb-3">مبادئ التنويع الاستثماري: كيف تحمي محفظتك؟</h4>
-                        <p class="text-muted mb-3">استراتيجيات ذكية لتوزيع استثماراتك على مشاريع متنوعة وتقليل المخاطر.</p>
+                        <div class="blog-category">بيئة تشغيلية</div>
+                        <h4 class="card-title mb-3">الروتين والبيروقراطية الإدارية</h4>
+                        <p class="text-muted mb-3">تأخر الإجراءات الحكومية للإنشاء والتوسع، وتوفر المنصة بيئة مرنة وتوجيهاً لتقليص زمن البدء بالنشاط التجاري والرسمي.</p>
                         <div class="flex justify-between items-center mt-4">
-                            <span class="text-sm text-primary">اقرأ المزيد</span>
-                            <span class="text-xs text-muted">8 دقيقة قراءة</span>
+                            <span class="text-sm text-primary">حلول تنظيمية</span>
                         </div>
                     </div>
                 </div>
                 
-                <!-- المقال 3 -->
                 <div class="card" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-body">
-                        <div class="blog-category">تمويل</div>
-                        <h4 class="card-title mb-3">التمويل الجماعي: ثورة في عالم تمويل المشاريع</h4>
-                        <p class="text-muted mb-3">كيف غير التمويل الجماعي قواعد اللعبة وأتاح فرصًا غير مسبوقة.</p>
+                        <div class="blog-category">دعم فني</div>
+                        <h4 class="card-title mb-3">المنافسة والوصول للتكنولوجيا</h4>
+                        <p class="text-muted mb-3">نقص التدريب والخبرات الفنية، وهو ما تعالجه المنصة عبر عرض الأفكار المدعومة بشراكات وتقديم سياسات تشجيعية للابتكار.</p>
                         <div class="flex justify-between items-center mt-4">
-                            <span class="text-sm text-primary">اقرأ المزيد</span>
-                            <span class="text-xs text-muted">12 دقيقة قراءة</span>
+                            <span class="text-sm text-primary">تطوير مستدام</span>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-6">
-                <a href="./blog/index.html" class="btn btn-outline btn-lg">
-                    <i class="fas fa-newspaper"></i>
-                    تصفح جميع المقالات
-                </a>
-            </div>
         </div>
     </section>
-            <!-- ============================================
-        SECTION 9: FAQ
-    ============================================ -->
+
     <section class="section-padding" id="faq">
         <div class="container">
             <div class="section-header">
-                <h2>الأسئلة الشائعة</h2>
-                <p class="section-subtitle">إجابات على أكثر الأسئلة شيوعاً حول منصة وَفير</p>
+                <h2>الأسئلة التقنية وهيكلة النظام</h2>
+                <p class="section-subtitle">إجابات حول البناء التقني وتحليل قواعد البيانات لمنصة وَفير</p>
             </div>
             
             <div class="max-w-3xl mx-auto">
                 <div class="faq-item" data-aos="fade-up">
                     <button class="faq-question">
-                        كيف أضمن أن مشروعي سيكون آمناً على المنصة؟
+                        ما هي التقنيات واللغات المستخدمة في برمجة المنصة؟
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>نقوم بفحص كل مشروع بدقة قبل نشره على المنصة. نتأكد من جدوى الفكرة، وجدية صاحب المشروع، وتوفر خطة عمل واضحة. كما نوقع اتفاقيات حماية تحفظ حقوق جميع الأطراف.</p>
+                        <p>تم استخدام تقنيات الـ Front-End مثل HTML لبناء هيكل الصفحات، و CSS لتنسيق واجهة المستخدم وجعلها متجاوبة، بالإضافة إلى JavaScript لإضافة السلوك الديناميكي والتفاعل. أما للواجهة الخلفية (Back-End) فقد تم استخدام لغة PHP لمعالجة البيانات، ونظام MySQL لإدارة قواعد البيانات وتخزينها.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
                     <button class="faq-question">
-                        ما هي نسبة العمولة التي تأخذها المنصة؟
+                        ما هي أهداف تصميم قاعدة البيانات في النظام؟
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>نحن نأخذ نسبة 5% من إجمالي التمويل المتحقق للمشروع فقط في حالة نجاح جمع التمويل. لا توجد أي رسوم مقدمة أو رسوم خفية.</p>
+                        <p>تهدف عملية تصميم قاعدة البيانات إلى تحقيق التكامل بين بيانات المستخدمين والمشروعات، تقليل الازدواجية والتكرار (عبر عملية التطبيع Normalization)، ضمان دقة وسلامة البيانات الحساسة، ودعم الإدارة في اتخاذ قرارات مالية واستراتيجية سليمة.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
                     <button class="faq-question">
-                        كيف يمكنني متابعة أداء المشروع الذي استثمرت فيه؟
+                        كيف يتم حماية وإدارة البيانات المالية داخل المنصة؟
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>توفر المنصة نظاماً لمتابعة المشاريع، حيث يمكنك الاطلاع على التقارير الدورية التي يقدمها صاحب المشروع، وحضور اجتماعات المتابعة، والاطلاع على البيانات المالية بشكل دوري.</p>
+                        <p>يعتمد النظام الفيزيائي لقاعدة البيانات على تشفير البيانات الحساسة وحمايتها من الاختراق، مع تحديد صلاحيات وصول صارمة للمستخدمين (ممولين، أصحاب مشروعات، موظفي مراجعة). يتم تسجيل جميع العمليات التمويلية بدقة وحفظ سجلات السداد لضمان الشفافية والموثوقية.</p>
                     </div>
                 </div>
                 
                 <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
                     <button class="faq-question">
-                        ماذا يحدث إذا لم يصل المشروع إلى هدف التمويل المطلوب؟
+                        ما هي بيئة التطوير (IDE) والمحاكي المستخدم للتشغيل؟
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>إذا لم يصل المشروع إلى الحد الأدنى للتمويل خلال المدة المحددة، يتم إعادة الأموال كاملة للمستثمرين دون أي خصم. لا يفقد أي من الطرفين أي مبلغ في هذه الحالة.</p>
+                        <p>تم تطوير الكود البرمجي باستخدام محرر النصوص VS Code لمرونته وقابليته للتخصيص، وتم تشغيل واختبار النظام محلياً باستخدام حزمة XAMPP التي توفر بيئة متكاملة تحتوي على خادم Apache ومحرك PHP وقاعدة بيانات MySQL.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- ============================================
-        FOOTER
-    ============================================ -->
+
     <footer class="footer" id="contact">
         <div class="container">
             <div class="grid grid-4">
@@ -706,84 +859,64 @@
                     <a href="#" class="footer-logo mb-4">
                         <div class="logo-icon">وَفير</div>
                     </a>
-                    <p class="mb-4">الوسيط الذكي لتمويل المشاريع بين أصحاب الأفكار والمستثمرين.</p>
+                    <p class="mb-4">نظام معلومات متكامل لربط المشاريع التنموية بالمستثمرين وتحقيق أهداف التنمية الاقتصادية.</p>
                     
                     <div class="social-links">
-                        <a href="#" class="social-link">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
                 
                 <div>
-                    <h4 class="footer-title">روابط سريعة</h4>
+                    <h4 class="footer-title">مكونات النظام</h4>
                     <ul class="footer-links">
-                        <li><a href="#home">الرئيسية</a></li>
-                        <li><a href="#how-it-works">كيف تعمل</a></li>
-                        <li><a href="#projects">المشاريع</a></li>
-                        <li><a href="#investors">للمستثمرين</a></li>
-                        <li><a href="#entrepreneurs">لأصحاب المشاريع</a></li>
+                        <li><a href="#how-it-works">تدفق البيانات (DFD)</a></li>
+                        <li><a href="#opportunities">قاعدة بيانات المشاريع</a></li>
+                        <li><a href="#investors">تقييم المشروعات</a></li>
+                        <li><a href="#entrepreneurs">تسجيل الطلبات</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="footer-title">الموارد</h4>
+                    <h4 class="footer-title">المراجع الأكاديمية</h4>
                     <ul class="footer-links">
-                        <li><a href="blog.html">المدونة</a></li>
-                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                        <li><a href="terms.html">الشروط والأحكام</a></li>
-                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
-                        <li><a href="sitemap.html">خريطة الموقع</a></li>
+                        <li><a href="#">المرصد المصري للفكر</a></li>
+                        <li><a href="#">تقارير البنك الدولي</a></li>
+                        <li><a href="#">أساسيات النظم وقواعد البيانات</a></li>
+                        <li><a href="#">اقتصاديات المشروعات</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="footer-title">اتصل بنا</h4>
+                    <h4 class="footer-title">إدارة المشروع</h4>
                     <ul class="footer-links">
                         <li class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-map-marker-alt text-primary"></i>
-                            <span>القاهرة، مصر</span>
+                            <i class="fas fa-university text-primary"></i>
+                            <span>مشروع تخرج أكاديمي</span>
                         </li>
                         <li class="flex items-center gap-2 mb-2">
-                            <i class="fas fa-phone text-primary"></i>
-                            <span>+20 100 123 4567</span>
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                            <span>جمهورية مصر العربية</span>
                         </li>
                         <li class="flex items-center gap-2 mb-2">
                             <i class="fas fa-envelope text-primary"></i>
-                            <span>info@mounly.com</span>
+                            <span>system@wafeer.local</span>
                         </li>
                     </ul>
-                    
-                    <div class="newsletter-form mt-4">
-                        <h5 class="mb-2">اشترك في نشرتنا البريدية</h5>
-                        <div class="flex gap-2">
-                            <input type="email" placeholder="بريدك الإلكتروني" class="form-control">
-                            <button class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
             
-            <div class="copyright">
-                <p>جميع الحقوق محفوظة &copy; منصة وَفير 2023</p>
+            <div class="copyright text-center" style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+                <p>جميع الحقوق محفوظة &copy; منصة وَفير - نظام التمويل والاستثمار</p>
+                <p class="footer-note" style="color: #9ca3af; margin-top: 10px;">
+                    * هذه المنصة هي تطبيق عملي لمشروع تخرج أكاديمي في تحليل وتصميم النظم ولا تمثل كياناً مالياً حقيقياً في الوقت الحالي.
+                </p>
             </div>
         </div>
     </footer>
-    <!-- ============================================
-        SCRIPTS
-    ============================================ -->
-    <!-- AOS Animation -->
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <script>
@@ -799,17 +932,17 @@
         const navMobile = document.getElementById('navMobile');
 
         if (mobileMenuBtn && navMobile) {
-    mobileMenuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();     // ← إضافة هذا السطر
-        navMobile.classList.toggle('active');
-        
-        const icon = mobileMenuBtn.querySelector('i');
-        if (icon) {
-            icon.className = navMobile.classList.contains('active') 
-                ? 'fas fa-times' 
-                : 'fas fa-bars';
-        }
-    });
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); 
+                navMobile.classList.toggle('active');
+                
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon) {
+                    icon.className = navMobile.classList.contains('active') 
+                        ? 'fas fa-times' 
+                        : 'fas fa-bars';
+                }
+            });
 
             // Close mobile menu when clicking on a link
             navMobile.querySelectorAll('.nav-link').forEach(link => {
@@ -913,7 +1046,7 @@
             });
         });
         
-        // Smooth scroll for anchor links (use header height dynamically)
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
@@ -930,25 +1063,12 @@
                         behavior: 'smooth'
                     });
 
-                    // Close mobile menu after navigation
                     if (navMobile && navMobile.classList.contains('active')) {
                         navMobile.classList.remove('active');
                         if (mobileMenuBtn) mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
                     }
                 }
             });
-        });
-
-        // Close mobile nav when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!navMobile || !mobileMenuBtn) return;
-            if (navMobile.classList.contains('active')) {
-                const clickedInsideNav = navMobile.contains(e.target) || mobileMenuBtn.contains(e.target);
-                if (!clickedInsideNav) {
-                    navMobile.classList.remove('active');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
-            }
         });
 
         // Theme toggle (dark / light)
@@ -964,7 +1084,7 @@
             try { localStorage.setItem('site-theme', mode); } catch (e) {}
         };
 
-        // Initialize theme from localStorage or OS preference
+        // Initialize theme
         (function() {
             let saved = null;
             try { saved = localStorage.getItem('site-theme'); } catch (e) {}

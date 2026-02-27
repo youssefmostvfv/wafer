@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مونلي - الوسيط الذكي لتمويل المشاريع | Mounly</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="منصة مونلي - الوسيط الذكي الذي يربط بين أصحاب المشاريع الواعدة والمستثمرين الراغبين في استثمارات مربحة وآمنة">
+    <meta name="keywords" content="تمويل المشاريع، استثمار، منصة تمويل، مشاريع ناشئة، مستثمرين">
+    <meta name="author" content="منصة مونلي">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="مونلي - الوسيط الذكي لتمويل المشاريع">
+    <meta property="og:description" content="اربط مشروعك بالمستثمرين المناسبين">
+    <meta property="og:image" content="https://mounly.com/og-image.jpg">
+    <meta property="og:url" content="https://mounly.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        /* ============================================
+            CSS RESET & BASE STYLES
+        ============================================ */
+        :root {
+            /* ========== نظام الألوان الفاتح الهادئ ========== */
+            
+            /* الألوان الأساسية (أخضر مونلي) */
+            --color-primary-50: #f0fdf4;
+            --color-primary-100: #dcfce7;
+            --color-primary-200: #bbf7d0;
+            --color-primary-300: #86efac;
+            --color-primary-400: #4ade80;
+            --color-primary-500: #22c55e;    /* اللون الأساسي */
+            --color-primary-600: #16a34a;
+            --color-primary-700: #15803d;
+            --color-primary-800: #166534;
+            --color-primary-900: #14532d;
+            
+            /* الألوان الثانوية */
+            --color-secondary-500: #3b82f6;   /* أزرق ناعم */
+            --color-secondary-600: #2563eb;
+            --color-accent-500: #8b5cf6;      /* بنفسجي ناعم */
+            --color-accent-600: #7c3aed;
+            --color-highlight: #f59e0b;       /* برتقالي للتأكيد */
+            
+            /* ألوان الحالة */
+            --color-success: #10b981;
+            --color-success-light: #d1fae5;
+            --color-warning: #f59e0b;
+            --color-warning-light: #fef3c7;
+            --color-danger: #ef4444;
+            --color-danger-light: #fee2e2;
+            --color-info: #0ea5e9;
+            --color-info-light: #e0f2fe;
+            
+            /* الألوان المحايدة (فتحة) */
+            --color-white: #ffffff;
+            --color-gray-50: #f9fafb;
+            --color-gray-100: #f3f4f6;
+            --color-gray-200: #e5e7eb;
+            --color-gray-300: #d1d5db;
+            --color-gray-400: #9ca3af;
+            --color-gray-500: #6b7280;
+            --color-gray-600: #4b5563;
+            --color-gray-700: #374151;
+            --color-gray-800: #1f2937;
+            --color-gray-900: #111827;
+            --color-black: #000000;
+            
+            /* الظلال (خفيفة) */
+            --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            
+            /* Border Radius */
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 1.5rem;
+            --space-lg: 2rem;
+            --space-xl: 3rem;
+            --space-2xl: 4rem;
+            --space-3xl: 6rem;
+            
+            /* Typography */
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+            
+            /* Transitions */
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+            
+            /* Z-index */
+            --z-dropdown: 1000;
+            --z-sticky: 1020;
+            --z-fixed: 1030;
+            --z-modal-backdrop: 1040;
+            --z-modal: 1050;
+            --z-popover: 1060;
+            --z-tooltip: 1070;
+        }
+        
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            color: var(--color-gray-700);
+            background-color: var(--color-white);
+            line-height: 1.6;
+            direction: rtl;
+            overflow-x: hidden;
+        }
+        
+        /* ============================================
+            UTILITY CLASSES
+        ============================================ */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+        
+        .container-wide {
+            max-width: 1400px;
+        }
+        
+        .section-padding {
+            padding: var(--space-2xl) 0;
+        }
+        
+        .section-padding-lg {
+            padding: var(--space-3xl) 0;
+        }
+        
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .text-left { text-align: left; }
+        
+        .mt-1 { margin-top: var(--space-xs); }
+        .mt-2 { margin-top: var(--space-sm); }
+        .mt-3 { margin-top: var(--space-md); }
+        .mt-4 { margin-top: var(--space-lg); }
+        .mt-5 { margin-top: var(--space-xl); }
+        .mt-6 { margin-top: var(--space-2xl); }
+        
+        .mb-1 { margin-bottom: var(--space-xs); }
+        .mb-2 { margin-bottom: var(--space-sm); }
+        .mb-3 { margin-bottom: var(--space-md); }
+        .mb-4 { margin-bottom: var(--space-lg); }
+        .mb-5 { margin-bottom: var(--space-xl); }
+        .mb-6 { margin-bottom: var(--space-2xl); }
+        
+        /* ============================================
+            TYPOGRAPHY
+        ============================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--color-gray-900);
+            margin-bottom: var(--space-md);
+        }
+        
+        h1 {
+            font-size: var(--font-size-5xl);
+        }
+        
+        h2 {
+            font-size: var(--font-size-4xl);
+            position: relative;
+            padding-bottom: var(--space-sm);
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-600));
+            border-radius: 2px;
+        }
+        
+        h2.text-center::after {
+            right: 50%;
+            transform: translateX(50%);
+        }
+        
+        h3 {
+            font-size: var(--font-size-3xl);
+        }
+        
+        h4 {
+            font-size: var(--font-size-2xl);
+        }
+        
+        h5 {
+            font-size: var(--font-size-xl);
+        }
+        
+        h6 {
+            font-size: var(--font-size-lg);
+        }
+        
+        p {
+            margin-bottom: var(--space-md);
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+        }
+        
+        .lead {
+            font-size: var(--font-size-xl);
+            font-weight: 300;
+            color: var(--color-gray-600);
+        }
+        
+        .text-primary {
+            color: var(--color-primary-500);
+        }
+        
+        .text-secondary {
+            color: var(--color-secondary-500);
+        }
+        
+        .text-accent {
+            color: var(--color-accent-500);
+        }
+        
+        .text-muted {
+            color: var(--color-gray-500);
+        }
+        
+        /* ============================================
+            BUTTONS
+        ============================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.75rem 1.5rem;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            line-height: 1.5;
+            text-align: center;
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            gap: 0.5rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+        }
+        
+        .btn-primary {
+            background-color: var(--color-primary-500);
+            color: var(--color-white);
+            border-color: var(--color-primary-500);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--color-primary-600);
+            border-color: var(--color-primary-600);
+        }
+        
+        .btn-secondary {
+            background-color: var(--color-secondary-500);
+            color: var(--color-white);
+            border-color: var(--color-secondary-500);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--color-secondary-600);
+            border-color: var(--color-secondary-600);
+        }
+        
+        .btn-accent {
+            background-color: var(--color-accent-500);
+            color: var(--color-white);
+            border-color: var(--color-accent-500);
+        }
+        
+        .btn-accent:hover {
+            background-color: var(--color-accent-600);
+            border-color: var(--color-accent-600);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: var(--color-primary-500);
+            border-color: var(--color-primary-500);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--color-primary-500);
+            color: var(--color-white);
+        }
+        
+        .btn-outline-secondary {
+            background-color: transparent;
+            color: var(--color-secondary-500);
+            border-color: var(--color-secondary-500);
+        }
+        
+        .btn-outline-secondary:hover {
+            background-color: var(--color-secondary-500);
+            color: var(--color-white);
+        }
+        
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: var(--font-size-lg);
+        }
+        
+        .btn-sm {
+            padding: 0.5rem 1rem;
+            font-size: var(--font-size-sm);
+        }
+        
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+        
+        .btn-icon {
+            width: 2.5rem;
+            height: 2.5rem;
+            padding: 0;
+            border-radius: var(--radius-full);
+        }
+        
+        /* ============================================
+            CARDS
+        ============================================ */
+        .card {
+            background: var(--color-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            transition: all var(--transition-base);
+            border: 1px solid var(--color-gray-200);
+        }
+        
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--color-primary-200);
+        }
+        
+        .card-body {
+            padding: var(--space-lg);
+        }
+        
+        .card-header {
+            padding: var(--space-lg) var(--space-lg) 0;
+        }
+        
+        .card-footer {
+            padding: 0 var(--space-lg) var(--space-lg);
+            border-top: 1px solid var(--color-gray-200);
+            margin-top: var(--space-lg);
+        }
+        
+        .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .card-title {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--space-sm);
+            color: var(--color-gray-900);
+        }
+        
+        .card-subtitle {
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+            margin-bottom: var(--space-md);
+        }
+        
+        /* ============================================
+            BADGES
+        ============================================ */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            line-height: 1;
+            text-align: center;
+            white-space: nowrap;
+            vertical-align: baseline;
+            border-radius: var(--radius-full);
+        }
+        
+        .badge-primary {
+            background-color: var(--color-primary-100);
+            color: var(--color-primary-800);
+        }
+        
+        .badge-secondary {
+            background-color: var(--color-secondary-100);
+            color: var(--color-secondary-800);
+        }
+        
+        .badge-accent {
+            background-color: var(--color-accent-100);
+            color: var(--color-accent-800);
+        }
+        
+        .badge-success {
+            background-color: var(--color-success-light);
+            color: var(--color-success);
+        }
+        
+        .badge-warning {
+            background-color: var(--color-warning-light);
+            color: var(--color-warning);
+        }
+        
+        .badge-danger {
+            background-color: var(--color-danger-light);
+            color: var(--color-danger);
+        }
+        
+        /* ============================================
+            FORMS
+        ============================================ */
+        .form-group {
+            margin-bottom: var(--space-md);
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: var(--space-xs);
+            font-weight: 500;
+            color: var(--color-gray-700);
+        }
+        
+        .form-control {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem;
+            font-size: var(--font-size-base);
+            font-family: 'Tajawal', sans-serif;
+            line-height: 1.5;
+            color: var(--color-gray-900);
+            background-color: var(--color-white);
+            border: 1px solid var(--color-gray-300);
+            border-radius: var(--radius-md);
+            transition: border-color var(--transition-base);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary-500);
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+        }
+        
+        .form-control::placeholder {
+            color: var(--color-gray-500);
+        }
+        
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-text {
+            display: block;
+            margin-top: 0.25rem;
+            font-size: var(--font-size-sm);
+            color: var(--color-gray-500);
+        }
+        
+        /* ============================================
+            HEADER & NAVIGATION
+        ============================================ */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--color-gray-200);
+            z-index: var(--z-fixed);
+            transition: all var(--transition-base);
+        }
+        
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            text-decoration: none;
+        }
+        
+        .logo-icon {
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-600));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .logo-text {
+            font-size: var(--font-size-2xl);
+            font-weight: 800;
+            color: var(--color-primary-600);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: var(--space-lg);
+            list-style: none;
+            align-items: center;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--color-gray-700);
+            font-weight: 500;
+            padding: 0.5rem 0;
+            position: relative;
+            transition: color var(--transition-base);
+        }
+        
+        .nav-link:hover {
+            color: var(--color-primary-500);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-primary-500);
+            transition: width var(--transition-base);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link.active {
+            color: var(--color-primary-500);
+        }
+        
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: var(--font-size-2xl);
+            color: var(--color-primary-500);
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        /* ============================================
+            HERO SECTION
+        ============================================ */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 6rem;
+            background: linear-gradient(135deg, var(--color-primary-50) 0%, var(--color-white) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%2322c55e' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: var(--radius-2xl);
+            box-shadow: var(--shadow-2xl);
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* ============================================
+            SECTIONS COMMON STYLES
+        ============================================ */
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--space-2xl);
+        }
+        
+        .section-title {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .section-subtitle {
+            font-size: var(--font-size-xl);
+            color: var(--color-gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* ============================================
+            GRID SYSTEM
+        ============================================ */
+        .grid {
+            display: grid;
+            gap: var(--space-lg);
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        
+        .grid-4 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        
+        /* ============================================
+            FEATURES SECTION
+        ============================================ */
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--color-primary-100);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-lg);
+            color: var(--color-primary-500);
+            font-size: 2rem;
+            transition: all var(--transition-base);
+        }
+        
+        .feature-card:hover .feature-icon {
+            background: var(--color-primary-500);
+            color: var(--color-white);
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* ============================================
+            TESTIMONIALS
+        ============================================ */
+        .testimonial-card {
+            position: relative;
+            padding: var(--space-xl);
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 4rem;
+            color: var(--color-primary-200);
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+        }
+        
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            background: var(--color-primary-500);
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        /* ============================================
+            STATS
+        ============================================ */
+        .stat-card {
+            text-align: center;
+            padding: var(--space-xl);
+        }
+        
+        .stat-number {
+            font-size: var(--font-size-5xl);
+            font-weight: 800;
+            color: var(--color-primary-500);
+            margin-bottom: var(--space-xs);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: var(--font-size-base);
+            color: var(--color-gray-600);
+            font-weight: 500;
+        }
+        
+        /* ============================================
+            PROCESS STEPS
+        ============================================ */
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--color-primary-500);
+            color: var(--color-white);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            margin: 0 auto var(--space-lg);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* ============================================
+            PROJECT CARDS
+        ============================================ */
+        .project-card .card-img {
+            height: 200px;
+        }
+        
+        .project-category {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--color-primary-100);
+            color: var(--color-primary-800);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            margin-bottom: var(--space-sm);
+        }
+        
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            margin: var(--space-md) 0;
+            padding: var(--space-md) 0;
+            border-top: 1px solid var(--color-gray-200);
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        
+        .meta-item {
+            text-align: center;
+        }
+        
+        .meta-value {
+            display: block;
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--color-gray-900);
+        }
+        
+        .meta-label {
+            display: block;
+            font-size: var(--font-size-xs);
+            color: var(--color-gray-500);
+        }
+        
+        .progress-bar {
+            height: 8px;
+            background: var(--color-gray-200);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+            margin: var(--space-md) 0;
+        }
+        
+        .progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--color-primary-500), var(--color-primary-600));
+            border-radius: var(--radius-full);
+            transition: width 1s ease;
+        }
+        
+        /* ============================================
+            COMPARISON TABLE
+        ============================================ */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: var(--space-md);
+            text-align: right;
+            border-bottom: 1px solid var(--color-gray-200);
+        }
+        
+        .comparison-table th {
+            background: var(--color-primary-50);
+            font-weight: 700;
+            color: var(--color-gray-900);
+        }
+        
+        .comparison-table tr:hover {
+            background: var(--color-gray-50);
+        }
+        
+        /* ============================================
+            FAQ ACCORDION
+        ============================================ */
+        .faq-item {
+            margin-bottom: var(--space-sm);
+            border: 1px solid var(--color-gray-200);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: var(--space-md);
+            background: var(--color-white);
+            border: none;
+            text-align: right;
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--color-gray-900);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all var(--transition-base);
+        }
+        
+        .faq-question:hover {
+            background: var(--color-gray-50);
+        }
+        
+        .faq-answer {
+            padding: 0 var(--space-md);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-base);
+        }
+        
+        .faq-answer.active {
+            padding: var(--space-md);
+            max-height: 500px;
+        }
+        
+        /* ============================================
+            CTA SECTIONS
+        ============================================ */
+        .cta {
+            padding: var(--space-3xl) 0;
+            background: linear-gradient(135deg, var(--color-primary-500), var(--color-primary-600));
+            color: var(--color-white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+        
+        .cta h2 {
+            color: var(--color-white);
+        }
+        
+        .cta h2::after {
+            background: var(--color-white);
+        }
+        
+        /* ============================================
+            FOOTER
+        ============================================ */
+        .footer {
+            background: var(--color-gray-900);
+            color: var(--color-gray-300);
+            padding: var(--space-3xl) 0 var(--space-xl);
+        }
+        
+        .footer a {
+            color: var(--color-gray-300);
+            text-decoration: none;
+            transition: color var(--transition-base);
+        }
+        
+        .footer a:hover {
+            color: var(--color-white);
+        }
+        
+        .footer-title {
+            color: var(--color-white);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--space-lg);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: var(--space-sm);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: var(--space-sm);
+            margin-top: var(--space-lg);
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--color-gray-800);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-gray-300);
+            transition: all var(--transition-base);
+        }
+        
+        .social-link:hover {
+            background: var(--color-primary-500);
+            color: var(--color-white);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: var(--space-xl);
+            margin-top: var(--space-xl);
+            border-top: 1px solid var(--color-gray-800);
+            color: var(--color-gray-500);
+            font-size: var(--font-size-sm);
+        }
+        
+        /* ============================================
+            RESPONSIVE DESIGN
+        ============================================ */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 1000px;
+            }
+            
+            h1 {
+                font-size: var(--font-size-4xl);
+            }
+            
+            h2 {
+                font-size: var(--font-size-3xl);
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                max-width: 800px;
+            }
+            
+            .grid-4 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--color-white);
+                width: 80%;
+                height: calc(100vh - 70px);
+                padding: var(--space-xl);
+                box-shadow: var(--shadow-xl);
+                transition: right var(--transition-base);
+                z-index: var(--z-modal);
+            }
+            
+            .nav-links.active {
+                right: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 var(--space-sm);
+            }
+            
+            .grid-2, .grid-3, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: var(--font-size-3xl);
+            }
+            
+            h2 {
+                font-size: var(--font-size-2xl);
+            }
+            
+            .section-padding {
+                padding: var(--space-xl) 0;
+            }
+            
+            .hero {
+                padding-top: 6rem;
+                padding-bottom: 4rem;
+            }
+            
+            .stat-number {
+                font-size: var(--font-size-4xl);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .btn {
+                padding: 0.625rem 1.25rem;
+                font-size: var(--font-size-sm);
+            }
+            
+            .btn-lg {
+                padding: 0.75rem 1.5rem;
+            }
+            
+            .card-body {
+                padding: var(--space-md);
+            }
+        }
+        
+        /* ============================================
+            ANIMATIONS
+        ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* ============================================
+            SCROLLBAR
+        ============================================ */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--color-gray-100);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-primary-300);
+            border-radius: var(--radius-full);
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--color-primary-500);
+        }
+        
+        /* ============================================
+            PRINT STYLES
+        ============================================ */
+        @media print {
+            .header,
+            .footer,
+            .cta,
+            .btn {
+                display: none !important;
+            }
+            
+            body {
+                color: var(--color-black);
+                background: var(--color-white);
+            }
+            
+            a {
+                color: var(--color-black);
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ============================================
+        HEADER
+    ============================================ -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="#" class="logo">
+                    <div class="logo-icon">م</div>
+                    <div class="logo-text">مونلي</div>
+                </a>
+                
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link active">الرئيسية</a></li>
+                    <li><a href="#how-it-works" class="nav-link">كيف تعمل</a></li>
+                    <li><a href="#projects" class="nav-link">المشاريع</a></li>
+                    <li><a href="#investors" class="nav-link">للمستثمرين</a></li>
+                    <li><a href="#entrepreneurs" class="nav-link">لأصحاب المشاريع</a></li>
+                    <li><a href="#about" class="nav-link">عن مونلي</a></li>
+                    <li><a href="#contact" class="nav-link">اتصل بنا</a></li>
+                    <li>
+                        <a href="login.html" class="btn btn-outline btn-sm">تسجيل الدخول</a>
+                        <a href="register.html" class="btn btn-primary btn-sm">إنشاء حساب</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ============================================
+        SECTION 1: HERO
+    ============================================ -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="grid grid-2 align-center">
+                <div class="hero-content" data-aos="fade-right">
+                    <h1 class="mb-3">وسيط <span class="text-primary">التمويل الذكي</span> بين المشاريع والمستثمرين</h1>
+                    <p class="lead mb-4">نحن الجسر الذي يربط بين الأفكار الواعدة ورؤوس الأموال المستثمرة. منصة مونلي توفر بيئة آمنة وشفافة لتمويل المشاريع الناجحة.</p>
+                    <div class="flex gap-2">
+                        <a href="#projects" class="btn btn-primary btn-lg">
+                            <i class="fas fa-search"></i>
+                            استكشف المشاريع
+                        </a>
+                        <a href="#how-it-works" class="btn btn-outline btn-lg">
+                            <i class="fas fa-play-circle"></i>
+                            كيف تعمل المنصة
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-image" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="منصة تمويل المشاريع">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 2: HOW IT WORKS
+    ============================================ -->
+    <section class="section-padding" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>كيف تعمل منصة مونلي؟</h2>
+                <p class="section-subtitle">عملية بسيطة وشفافة تربط أصحاب المشاريع بالمستثمرين المناسبين</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="process-step" data-aos="fade-up">
+                    <div class="step-number">1</div>
+                    <h4>تقديم المشروع</h4>
+                    <p>صاحب المشروع يقدم فكرته مع خطة عمل مفصلة ودراسة جدوى واضحة</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-number">2</div>
+                    <h4>الفحص والمراجعة</h4>
+                    <p>فريقنا المتخصص يراجع المشروع للتأكد من جدواه وملاءمته للمنصة</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-number">3</div>
+                    <h4>العرض على المنصة</h4>
+                    <p>يتم نشر المشروع على المنصة لجذب المستثمرين المهتمين</p>
+                </div>
+                
+                <div class="process-step" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-number">4</div>
+                    <h4>جمع التمويل</h4>
+                    <p>المستثمرون يشاركون في تمويل المشروع حسب رغبتهم وإمكانياتهم</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 3: PLATFORM STATS
+    ============================================ -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>منصة مونلي في أرقام</h2>
+                <p class="section-subtitle">إنجازاتنا وأرقامنا تتحدث عن نفسها</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="stat-card" data-aos="fade-up">
+                    <div class="stat-number" data-count="150">0</div>
+                    <div class="stat-label">مشروع ممول بنجاح</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-number" data-count="3000">0</div>
+                    <div class="stat-label">مستثمر نشط</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">مليون+ إجمالي التمويل</div>
+                </div>
+                
+                <div class="stat-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-number" data-count="96">0</div>
+                    <div class="stat-label">% نسبة رضا العملاء</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 4: CURRENT PROJECTS
+    ============================================ -->
+    <section class="section-padding" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h2>المشاريع الحالية على المنصة</h2>
+                <p class="section-subtitle">اختر من بين المشاريع الواعدة وشارك في تمويلها</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <!-- Project 1 -->
+                <div class="project-card card" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مصنع أثاث" class="card-img">
+                    <div class="card-body">
+                        <span class="project-category">صناعي</span>
+                        <h3 class="card-title">مصنع أثاث خشبي عالي الجودة</h3>
+                        <p>إنشاء مصنع متكامل لإنتاج الأثاث الخشبي الفاخر باستخدام أحدث التقنيات</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-value">500,000 ج</span>
+                                <span class="meta-label">المطلوب</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">350,000 ج</span>
+                                <span class="meta-label">المجموع</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">45</span>
+                                <span class="meta-label">مستثمر</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-3">
+                            <span>70% ممول</span>
+                            <span>30 يوم متبقية</span>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block mt-3">استثمر في هذا المشروع</button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="منصة تعليمية" class="card-img">
+                    <div class="card-body">
+                        <span class="project-category">تقنية</span>
+                        <h3 class="card-title">منصة تعليمية تفاعلية للطلاب</h3>
+                        <p>تطوير منصة إلكترونية توفر محتوى تعليمي تفاعلي لطلاب المدارس والجامعات</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-value">250,000 ج</span>
+                                <span class="meta-label">المطلوب</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">180,000 ج</span>
+                                <span class="meta-label">المجموع</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">28</span>
+                                <span class="meta-label">مستثمر</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 72%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-3">
+                            <span>72% ممول</span>
+                            <span>45 يوم متبقية</span>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block mt-3">استثمر في هذا المشروع</button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="مزرعة عضوية" class="card-img">
+                    <div class="card-body">
+                        <span class="project-category">زراعي</span>
+                        <h3 class="card-title">مزرعة منتجات عضوية طبيعية</h3>
+                        <p>إنشاء مزرعة متكاملة لإنتاج الخضروات والفواكه العضوية باستخدام الزراعة الحديثة</p>
+                        
+                        <div class="project-meta">
+                            <div class="meta-item">
+                                <span class="meta-value">300,000 ج</span>
+                                <span class="meta-label">المطلوب</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">210,000 ج</span>
+                                <span class="meta-label">المجموع</span>
+                            </div>
+                            <div class="meta-item">
+                                <span class="meta-value">35</span>
+                                <span class="meta-label">مستثمر</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 70%"></div>
+                        </div>
+                        
+                        <div class="flex justify-between mt-3">
+                            <span>70% ممول</span>
+                            <span>25 يوم متبقية</span>
+                        </div>
+                        
+                        <button class="btn btn-primary btn-block mt-3">استثمر في هذا المشروع</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <a href="projects.html" class="btn btn-outline btn-lg">
+                    <i class="fas fa-list"></i>
+                    عرض جميع المشاريع
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 5: FOR INVESTORS
+    ============================================ -->
+    <section class="section-padding bg-light" id="investors">
+        <div class="container">
+            <div class="section-header">
+                <h2>للمستثمرين</h2>
+                <p class="section-subtitle">استثمر أموالك في مشاريع واعدة وحقيقية بأرباح مشروعة</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="card" data-aos="fade-up">
+                    <div class="card-body text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 class="card-title">عوائد مجزية</h4>
+                        <p>استثمر في مشاريع حقيقية بعوائد تصل إلى 30% سنوياً حسب نوع المشروع ودرجة خطورته</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-body text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4 class="card-title">حماية وأمان</h4>
+                        <p>نظام متكامل لحماية استثماراتك مع ضمانات ورقابة مستمرة على سير المشاريع</p>
+                    </div>
+                </div>
+                
+                <div class="card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-body text-center">
+                        <div class="feature-icon">
+                            <i class="fas fa-diversification"></i>
+                        </div>
+                        <h4 class="card-title">تنويع المخاطر</h4>
+                        <p>قسم استثماراتك على عدة مشاريع مختلفة لتقليل المخاطر وزيادة فرص النجاح</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 6: FOR ENTREPRENEURS
+    ============================================ -->
+    <section class="section-padding" id="entrepreneurs">
+        <div class="container">
+            <div class="section-header">
+                <h2>لأصحاب المشاريع</h2>
+                <p class="section-subtitle">احصل على التمويل الذي تحتاجه لمشروعك من مجموعة من المستثمرين المهتمين</p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div data-aos="fade-right">
+                    <h3 class="mb-3">لماذا تقدم مشروعك على مونلي؟</h3>
+                    
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <div class="text-primary">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h5>تمويل دون فوائد ربوية</h5>
+                                <p class="text-muted">نظام تمويل يتوافق مع الشريعة الإسلامية</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="text-primary">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h5>وصول لمستثمرين مهتمين</h5>
+                                <p class="text-muted">مجتمع من المستثمرين المتخصصين في مختلف المجالات</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="text-primary">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h5>دعم فني واستشاري</h5>
+                                <p class="text-muted">فريق متخصص لمساعدتك في تطوير مشروعك</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-3">
+                            <div class="text-primary">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h5>شفافية ومتابعة</h5>
+                                <p class="text-muted">نظام متابعة واضح وإعداد تقارير دورية</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="submit-project.html" class="btn btn-primary btn-lg mt-4">
+                        <i class="fas fa-rocket"></i>
+                        قدم مشروعك الآن
+                    </a>
+                </div>
+                
+                <div data-aos="fade-left">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title mb-3">الشروط الأساسية لقبول المشروع</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-success mt-1"></i>
+                                    <span>دراسة جدوى واضحة ومفصلة</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-success mt-1"></i>
+                                    <span>فريق عمل مؤهل وذو خبرة</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-success mt-1"></i>
+                                    <span>خطة تنفيذ واقعية وزمنية</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-success mt-1"></i>
+                                    <span>سوق مستهدف محدد وواضح</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-success mt-1"></i>
+                                    <span>التزام بالقوانين واللوائح</span>
+                                </li>
+                                <li class="flex items-start gap-2">
+                                    <i class="fas fa-check text-success mt-1"></i>
+                                    <span>توافق مع الشريعة الإسلامية (إن وجد)</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 7: COMPARISON WITH BANKS
+    ============================================ -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>الفرق بين مونلي والبنوك التقليدية</h2>
+                <p class="section-subtitle">لماذا تختار منصة مونلي للتمويل؟</p>
+            </div>
+            
+            <div class="card" data-aos="fade-up">
+                <div class="card-body">
+                    <div class="overflow-auto">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>المعيار</th>
+                                    <th>البنوك التقليدية</th>
+                                    <th>منصة مونلي</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>نوع التمويل</td>
+                                    <td>قروض بفوائد ربوية</td>
+                                    <td>تمويل بالمشاركة أو المرابحة الإسلامية</td>
+                                </tr>
+                                <tr>
+                                    <td>المدة الزمنية</td>
+                                    <td>إجراءات طويلة ومعقدة</td>
+                                    <td>موافقة خلال 48 ساعة</td>
+                                </tr>
+                                <tr>
+                                    <td>المستندات المطلوبة</td>
+                                    <td>مستندات كثيرة وتعقيدات</td>
+                                    <td>مستندات أساسية فقط</td>
+                                </tr>
+                                <tr>
+                                    <td>الكفيل</td>
+                                    <td>مطلوب في معظم الحالات</td>
+                                    <td>غير مطلوب</td>
+                                </tr>
+                                <tr>
+                                    <td>الضمانات</td>
+                                    <td>ضمانات كبيرة وعقارية</td>
+                                    <td>ضمانات مناسبة للمشروع</td>
+                                </tr>
+                                <tr>
+                                    <td>الشفافية</td>
+                                    <td>محدودة</td>
+                                    <td>شفافية كاملة في جميع المراحل</td>
+                                </tr>
+                                <tr>
+                                    <td>المتابعة</td>
+                                    <td>متابعة روتينية</td>
+                                    <td>متابعة فنية واستشارية مستمرة</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 8: SUCCESS STORIES
+    ============================================ -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>قصص نجاح</h2>
+                <p class="section-subtitle">مشاريع نجحت عبر منصة مونلي وحققت نتائج مذهلة</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="testimonial-card card" data-aos="fade-up">
+                    <p class="mb-4">"بفضل تمويل مونلي استطعنا تحويل فكرتنا إلى واقع. المنصة وفرت لنا ليس فقط التمويل ولكن أيضاً الاستشارات الفنية التي ساعدتنا على النجاح."</p>
+                    
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">أ</div>
+                        <div>
+                            <h5>أحمد محمد</h5>
+                            <p class="text-muted">مؤسس مصنع الأثاث الخشبي</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card" data-aos="fade-up" data-aos-delay="100">
+                    <p class="mb-4">"كنت أبحث عن فرصة استثمارية آمنة، ووجدت في مونلي الحل المثالي. التنويع في المشاريع ساعدني في تحقيق عوائد ممتازة مع مخاطرة محدودة."</p>
+                    
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">س</div>
+                        <div>
+                            <h5>سارة خالد</h5>
+                            <p class="text-muted">مستثمرة في 8 مشاريع</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card card" data-aos="fade-up" data-aos-delay="200">
+                    <p class="mb-4">"الشفافية والمتابعة المستمرة هي ما يميز مونلي. كمستثمر أشعر بالأمان لأنني أتابع مشاريعي خطوة بخطوة."</p>
+                    
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">م</div>
+                        <div>
+                            <h5>محمد علي</h5>
+                            <p class="text-muted">مستثمر منذ 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 9: FAQ
+    ============================================ -->
+    <section class="section-padding bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>الأسئلة الشائعة</h2>
+                <p class="section-subtitle">إجابات واضحة على أكثر الأسئلة التي تردنا</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="space-y-3">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item" data-aos="fade-up">
+                        <button class="faq-question">
+                            ما هو الفرق بين مونلي والبنوك التقليدية؟
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>مونلي هي منصة تمويل جماعي وليست بنكاً. نحن وسيط نربط بين المستثمرين وأصحاب المشاريع مباشرة. لا نقدم قروضاً، بل نسهل الاستثمار المباشر في المشاريع. البنوك تقرض أموالها وتحصل على فوائد، أما نحن فنربط بين الأطراف ونأخذ عمولة على الخدمة فقط.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 2 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
+                        <button class="faq-question">
+                            كيف أربح كمستثمر على المنصة؟
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>تستثمر في مشروع ما، وعندما يحقق المشروع أرباحاً، تحصل على نسبة من هذه الأرباح حسب حجم استثمارك. الأرباح تأتي من نجاح المشروع الحقيقي، وليست فوائد ثابتة. يمكن أن تتراوح العوائد بين 15% إلى 40% سنوياً حسب نوع المشروع ودرجة خطورته.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 3 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question">
+                            ما هي عمولة المنصة؟
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نحن نأخذ عمولة بنسبة 5% من المبلغ الذي يتم جمعه للمشروع الناجح، بالإضافة إلى 2% من الأرباح التي يحققها المشروع. هذه العمولة مقابل خدمات المراجعة والمتابعة والتيسير التي نقدمها. لا توجد رسوم خفية أو تكاليف إضافية.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- FAQ 4 -->
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                        <button class="faq-question">
+                            كيف يتم حماية أموال المستثمرين؟
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>نستخدم نظام ودائع طرف ثالث مؤمن، ولا نمسك بالأموال مباشرة. كل مشروع له حساب منفصل، ويتم صرف الأموال على مراحل حسب تقدم المشروع. كما أننا نطلب ضمانات من أصحاب المشاريع ونتابع تنفيذهم خطوة بخطوة.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-5">
+                    <a href="faq.html" class="btn btn-outline">
+                        <i class="fas fa-question-circle"></i>
+                        عرض جميع الأسئلة
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        SECTION 10: TRUST & CERTIFICATIONS
+    ============================================ -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2>الثقة والشهادات</h2>
+                <p class="section-subtitle">نعمل تحت إشراف الجهات الرقابية والشرعية المعتمدة</p>
+            </div>
+            
+            <div class="grid grid-4">
+                <div class="text-center" data-aos="fade-up">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="mt-3">مرخصة من البنك المركزي</h4>
+                    <p class="text-muted">ترخيص رقم 123/2024</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h4 class="mt-3">هيئة رقابة شرعية</h4>
+                    <p class="text-muted">تضم نخبة من علماء الشريعة</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4 class="mt-3">نظام أمني متكامل</h4>
+                    <p class="text-muted">حماية بيانات وشفافية كاملة</p>
+                </div>
+                
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon mx-auto">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4 class="mt-3">شراكات استراتيجية</h4>
+                    <p class="text-muted">مع أهم المؤسسات المالية</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        FINAL CTA
+    ============================================ -->
+    <section class="cta">
+        <div class="container">
+            <div class="section-header">
+                <h2>مستعد لبدء رحلتك مع مونلي؟</h2>
+                <p class="section-subtitle">انضم إلى مجتمع المستثمرين وأصحاب المشاريع الناجحين</p>
+            </div>
+            
+            <div class="flex gap-4 justify-center mt-5">
+                <a href="register-investor.html" class="btn btn-accent btn-lg">
+                    <i class="fas fa-user-tie"></i>
+                    سجل كمستثمر
+                </a>
+                
+                <a href="register-entrepreneur.html" class="btn btn-secondary btn-lg">
+                    <i class="fas fa-lightbulb"></i>
+                    قدم مشروعك
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+        FOOTER
+    ============================================ -->
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="grid grid-4">
+                <div>
+                    <a href="#" class="logo">
+                        <div class="logo-icon">م</div>
+                        <div class="logo-text" style="color: white;">مونلي</div>
+                    </a>
+                    
+                    <p class="mt-3">منصة التمويل الجماعي الأولى في مصر، نربط المستثمرين بأصحاب المشاريع بكل شفافية وأمان.</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">روابط سريعة</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">الرئيسية</a></li>
+                        <li><a href="#how-it-works">كيف تعمل</a></li>
+                        <li><a href="#projects">المشاريع</a></li>
+                        <li><a href="#investors">للمستثمرين</a></li>
+                        <li><a href="#entrepreneurs">لأصحاب المشاريع</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">موارد مهمة</h4>
+                    <ul class="footer-links">
+                        <li><a href="blog.html">المدونة</a></li>
+                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
+                        <li><a href="terms.html">الشروط والأحكام</a></li>
+                        <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                        <li><a href="sharia.html">الضوابط الشرعية</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">اتصل بنا</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <i class="fas fa-map-marker-alt ml-2"></i>
+                            القاهرة، مصر
+                        </li>
+                        <li>
+                            <i class="fas fa-phone ml-2"></i>
+                            +20 123 456 7890
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope ml-2"></i>
+                            info@mounly.com
+                        </li>
+                        <li>
+                            <i class="fas fa-clock ml-2"></i>
+                            الأحد - الخميس 9ص - 5م
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 منصة مونلي للتمويل الجماعي. جميع الحقوق محفوظة.</p>
+                <p class="mt-2">مرخصة من البنك المركزي المصري | تحت إشراف الهيئة الشرعية للرقابة المالية</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================
+        BACK TO TOP BUTTON
+    ============================================ -->
+    <button id="backToTop" class="btn btn-primary btn-icon" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000; display: none;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- ============================================
+        SCRIPTS
+    ============================================ -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            // Show/hide back to top button
+            if (window.scrollY > 300) {
+                backToTop.style.display = 'flex';
+            } else {
+                backToTop.style.display = 'none';
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Back to top button
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Animated counters
+        const statNumbers = document.querySelectorAll('.stat-number');
+        
+        function animateCounter(element, target, duration = 2000) {
+            let start = 0;
+            const increment = target / (duration / 16);
+            const timer = setInterval(() => {
+                start += increment;
+                if (start >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(start);
+                }
+            }, 16);
+        }
+        
+        // Intersection Observer for stats animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseInt(entry.target.getAttribute('data-count'));
+                    animateCounter(entry.target, target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        statNumbers.forEach(stat => observer.observe(stat));
+        
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle active class
+                question.classList.toggle('active');
+                answer.classList.toggle('active');
+                
+                // Rotate icon
+                if (question.classList.contains('active')) {
+                    icon.style.transform = 'rotate(180deg)';
+                } else {
+                    icon.style.transform = 'rotate(0deg)';
+                }
+                
+                // Close other FAQs
+                faqQuestions.forEach(otherQuestion => {
+                    if (otherQuestion !== question) {
+                        otherQuestion.classList.remove('active');
+                        otherQuestion.nextElementSibling.classList.remove('active');
+                        otherQuestion.querySelector('i').style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Project investment buttons
+        document.querySelectorAll('.btn-primary').forEach(btn => {
+            if (btn.textContent.includes('استثمر')) {
+                btn.addEventListener('click', function() {
+                    const projectTitle = this.closest('.card').querySelector('.card-title').textContent;
+                    alert(`سيتم توجيهك إلى صفحة الاستثمار في مشروع: ${projectTitle}`);
+                    // In real implementation, you would redirect to investment page
+                    // window.location.href = 'investment.html?project=' + projectId;
+                });
+            }
+        });
+        
+        // Form submission example
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('شكراً لك! سيتم التواصل معك قريباً.');
+                this.reset();
+            });
+        });
+        
+        // Initialize tooltips
+        const tooltips = document.querySelectorAll('[data-tooltip]');
+        tooltips.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                const tooltipText = element.getAttribute('data-tooltip');
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tooltip';
+                tooltip.textContent = tooltipText;
+                document.body.appendChild(tooltip);
+                
+                const rect = element.getBoundingClientRect();
+                tooltip.style.position = 'fixed';
+                tooltip.style.top = (rect.top - tooltip.offsetHeight - 10) + 'px';
+                tooltip.style.right = (rect.right - rect.width / 2) + 'px';
+                tooltip.style.transform = 'translateX(50%)';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                const tooltip = document.querySelector('.tooltip');
+                if (tooltip) {
+                    tooltip.remove();
+                }
+            });
+        });
+        
+        // Add CSS for tooltips
+        const style = document.createElement('style');
+        style.textContent = `
+            .tooltip {
+                background: var(--color-gray-800);
+                color: white;
+                padding: 0.5rem 0.75rem;
+                border-radius: var(--radius-sm);
+                font-size: var(--font-size-sm);
+                z-index: var(--z-tooltip);
+                white-space: nowrap;
+                box-shadow: var(--shadow-md);
+            }
+            
+            .tooltip::before {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                right: 50%;
+                transform: translateX(50%);
+                border-width: 5px;
+                border-style: solid;
+                border-color: var(--color-gray-800) transparent transparent transparent;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
