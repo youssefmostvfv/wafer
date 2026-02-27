@@ -113,6 +113,7 @@
     --z-modal: 1050;
     --z-popover: 1060;
     --z-tooltip: 1070;
+    
 }
 
 /* Light mode overrides */
@@ -191,6 +192,7 @@
     --header-bg: rgba(255,255,255,0.95);
     --header-border: #e2e8f0;
 }
+
         
         /* Reset & Base Styles */
         * {
@@ -436,7 +438,7 @@
         }
         
         .btn-outline {
-            background-color: var(--color-primary-900);
+            background-color: var(--color-primary-800);
             color: var(--color-primary-500);
             border-color: var(--color-primary-500);
         }

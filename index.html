@@ -13,7 +13,7 @@
     <meta name="keywords" content="المشروعات الصغيرة، تمويل، منصة، ريادة أعمال، التنمية المستدامة">
     <meta name="author" content="منصة وَفير">
     
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="./img/logo.png" href="favicon.ico">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,7 +126,7 @@
         }
         .stat-box-new i {
             font-size: 2.5rem;
-            color: var(--primary-color);
+            color: #1e293b;
             margin-bottom: 1rem;
             display: block;
         }
@@ -168,6 +168,19 @@
             margin-top: 10px;
             text-align: center;
         }
+        .logo-iconn img{
+            height: 45px;        /* حجم اللوجو */
+            border-radius: 50px;
+            width: auto;         /* يحافظ على التناسب */
+            object-fit: contain; /* يمنع التشويه */
+            display: block;
+        }
+
+            /* محاذاة اللوجو داخل الناف */
+        .logo-iconn{
+            display: flex;
+            align-items: center;
+        }
     </style>
 </head>
 
@@ -176,13 +189,13 @@
         <div class="container">
             <nav class="nav">
                 <a href="#" class="logo">
-                    <div class="logo-icon">وَفير</div>
+                    <div class="logo-iconn"><img src="./img/logo.png" alt=""></div>
                 </a>
                 
                 <div class="nav-desktop-links">
                     <a href="#home" class="nav-link">الرئيسية</a>
                     <a href="#how-it-works" class="nav-link">آلية العمل</a>
-                    <a href="#opportunities" class="nav-link">المشروعات</a>
+                    <a href="./blog/index.html" class="nav-link">المشروعات</a>
                     <a href="#investors" class="nav-link">الأهمية الاقتصادية</a>
                 </div>
                 
@@ -200,7 +213,7 @@
                 <div class="nav-mobile" id="navMobile">
                     <a href="#home" class="nav-link">الرئيسية</a>
                     <a href="#how-it-works" class="nav-link">آلية العمل</a>
-                    <a href="#opportunities" class="nav-link">المشروعات</a>
+                    <a href="./blog/index.html" class="nav-link">المشروعات</a>
                     <a href="#investors" class="nav-link">الأهمية الاقتصادية</a>
                 </div>
             </nav>
@@ -291,7 +304,7 @@
         </div>
     </section>
 
-    <section class="section-padding" id="opportunities">
+    <!-- <section class="section-padding" id="opportunities">
         <div class="container">
             <div class="section-header">
                 <h2>مشروعات استثمارية متاحة</h2>
@@ -400,7 +413,7 @@
                 <a href="./blog/index.html" class="btn btn-primary btn-lg">تصفح قاعدة بيانات المشروعات</a>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="section-padding bg-secondary" id="stats">
         <div class="container">
@@ -923,7 +936,7 @@
         // Initialize AOS
         AOS.init({
             duration: 800,
-            once: true,
+            once: false,
             offset: 100
         });
         
